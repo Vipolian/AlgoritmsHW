@@ -57,7 +57,15 @@ public:
     {
         return size;
     }
-    int getHashByDivision(int key)
+             
+    int find(int data)
+    {
+        for(Node*pos=Nodes -> at(getHashByDivision(data));pos;pos=pos->next)
+    if(pos->data==data)
+        return true;
+return false;
+    }
+        int getHashByDivision(int key)
     {
         return (key % getSize());
     }
