@@ -1,103 +1,135 @@
-class Node 
+#include <assert.h>
+#include <iostream>
+#include <string>
+#include <vector>
+using std::string;
+
+unsigned int MyEffectiveHash( const string& key, int bound )
 {
-        friend class HashTable;
-        Node* next;
-        int data;
-    public:
-        Node()
-        {
-        }
-        Node(int d, Node* n)
-        {
-            data = d;
-            next = n;
-        }
-        ~Node() 
-        {
-        }
-};
-class HashTable 
-{
+    return key.empty() ? 0 : ( static_cast<unsigned int>( key[0] ) % bound );
+}
+
+class CHashTable {
 public:
-    int size;
-    vector<Node*>* Nodes;
-    HashTable(int s)
-    {
-        size = s;
-        Nodes = new vector<Node*>(size);
-    }
-    HashTable()
-    {
-        size = DEFAULT;
-        Nodes = new vector<Node*>(size);
-    }
-    ~HashTable()
-    {
-    }
-    void insert(int data)
-    {
-        int index = getHashByDivision(data);
-        if (Nodes -> at(index) == NULL)
-        {
-            Nodes -> at(index) = new Node(data, NULL);
-            return;
-        }
-        Node* p = Nodes -> at(getHashByDivision(data));
-        while (p != NULL){
-            if (p -> next == NULL)
-            {
-                p -> next = new Node(data, NULL);
-                break;
-            }
-            p = p -> next;
-        }
-    }
-    
-    int getSize()
-    {
-        return size;
-    }
-             
-    int find(int data)
-    {
-        for(Node*pos=Nodes -> at(getHashByDivision(data));pos;pos=pos->next)
-    if(pos->data==data)
-        return true;
-return false;
-    }
-        int getHashByDivision(int key)
-    {
-        return (key % getSize());
-    }
-    void print(int start)
-    {
-        int lineCount = 0;
-        for (int i = start; i < Nodes -> size(); i++){
-            cout << i << "\t";
-            Node* p = Nodes -> at(i);
-            while (p != NULL){
-                cout << p -> data << " ";
-                p = p -> next;
-            }
-            cout << endl;
-        }
-    }
+    explicit CHashTable( int initialTableSize );
+    ~CHashTable();
+
+    // Проверка наличия ключа в хеш-таблице.
+    bool Has( const string& key ) const;
+    // Добавление ключа. Возвращает false, если ключ уже есть в хеш-таблице, повторно его не добавляет.
+    bool Add( const string& key );
+    // Удаление ключа. Возвращает false, если ключа нет в хеш-таблице.
+    bool Remove( const string& key );
+
+private:
+    // Узел односвязного списка.
+    struct CHashTableNode {
+        string Key;
+        CHashTableNode* Next;
+        explicit CHashTableNode( const string& key ) : Key( key ), Next( nullptr ) {}
+    };
+    std::vector<CHashTableNode*> table;
 };
-int main(int argc, const char* argv[]){
-    int n = 10;
-    //argv[1] = "10";
-    //argv[2] = "10";
-    int A[] = { 40, 12, 79, 35, 43, 52, 83, 66, 89, 79 };
-    
-    
-    HashTable* hash = new HashTable(n);
-    for (int i = 0; i < n; i++){
-        hash -> insert(A[i]);
+
+CHashTable::CHashTable( int initialTableSize ) :
+        table( initialTableSize, nullptr )
+{
+}
+
+CHashTable::~CHashTable()
+{
+    // Удаляем все цепочки.
+    for( int i = 0; i < static_cast<int>( table.size() ); ++i ) {
+        CHashTableNode* current = table[i];
+        while( current != nullptr ) {
+            CHashTableNode* next = current->Next;
+            delete current;
+            current = next;
+        }
     }
- 
-    hash -> print(0);
-    
- 
-    system("pause");
+}
+
+bool CHashTable::Has( const string& key ) const
+{
+    const int hash = MyEffectiveHash( key, table.size() );
+
+    for( CHashTableNode* node = table[hash]; node != nullptr; node = node->Next ) {
+        if( node->Key == key ) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool CHashTable::Add( const string& key )
+{
+    const int hash = MyEffectiveHash( key, table.size() );
+    for( CHashTableNode* node = table[hash]; node != nullptr; node = node->Next ) {
+        if( node->Key == key ) {
+            return false;
+        }
+    }
+    CHashTableNode* newNode = new CHashTableNode( key );
+    newNode->Next = table[hash];
+    table[hash] = newNode;
+    return true;
+}
+
+bool CHashTable::Remove( const string& key )
+{
+    const int hash = MyEffectiveHash( key, table.size() );
+
+    // Если пустой список.
+    if( table[hash] == nullptr ) {
+        return false;
+    }
+    // Если удаляемый ключ - первый.
+    if( table[hash]->Key == key ) {
+        CHashTableNode* toDelete = table[hash];
+        table[hash] = toDelete->Next;
+        delete toDelete;
+        return true;
+    }
+
+    for( CHashTableNode* prev = table[hash]; prev->Next != nullptr; prev = prev->Next ) {
+        // Если удаляемый ключ - следующий.
+        if( prev->Next->Key == key ) {
+            CHashTableNode* toDelete = prev->Next;
+            prev->Next = toDelete->Next;
+            delete toDelete;
+            return true;
+        }
+    }
+
+    // Предыдущий код можно заменить на следующий:
+    //for( CHashTableNode** node = &table[hash]; *node != nullptr; node = &( ( *node )->Next ) ) {
+    //  if( ( *node )->Key == key ) {
+    //      CHashTableNode* toDelete = *node;
+    //      *node = toDelete->Next;
+    //      delete toDelete;
+    //      return true;
+    //  }
+    //}
+    return false;
+}
+
+int main()
+{
+    CHashTable hashTable( 800 );
+    char command = 0;
+    string key;
+    while( std::cin >> command >> key ) {
+        switch( command ) {
+            case '?':
+                std::cout << ( hashTable.Has( key ) ? "OK" : "FAIL" ) << std::endl;
+                break;
+            case '+':
+                std::cout << ( hashTable.Add( key ) ? "OK" : "FAIL" ) << std::endl;
+                break;
+            case '-':
+                std::cout << ( hashTable.Remove( key ) ? "OK" : "FAIL" ) << std::endl;
+                break;
+        }
+    }
     return 0;
 }
