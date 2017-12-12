@@ -1,3 +1,12 @@
+//
+// Created by Vipolion on 09.12.2017.
+//
+
+#ifndef HASHMAP_CHAINHM_H
+#define HASHMAP_CHAINHM_H
+
+#endif //HASHMAP_CHAINHM_H
+
 #include <assert.h>
 #include <iostream>
 #include <string>
@@ -113,23 +122,4 @@ bool CHashTable::Remove( const string& key )
     return false;
 }
 
-int main()
-{
-    CHashTable hashTable( 800 );
-    char command = 0;
-    string key;
-    while( std::cin >> command >> key ) {
-        switch( command ) {
-            case '?':
-                std::cout << ( hashTable.Has( key ) ? "OK" : "FAIL" ) << std::endl;
-                break;
-            case '+':
-                std::cout << ( hashTable.Add( key ) ? "OK" : "FAIL" ) << std::endl;
-                break;
-            case '-':
-                std::cout << ( hashTable.Remove( key ) ? "OK" : "FAIL" ) << std::endl;
-                break;
-        }
-    }
-    return 0;
-}
+
