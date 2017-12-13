@@ -1,4 +1,3 @@
-
 #ifndef HASHMAPS_LINEHM_H
 #define HASHMAPS_LINEHM_H
 
@@ -18,9 +17,6 @@ int my_hash_l(const int & key, int bound) {
 }
 
 
-
-
-
 using vector_t = std::vector<std::pair<int,bool>>;
 
 
@@ -30,37 +26,28 @@ public:
 
     explicit l_hash_table(int max_size);
     ~l_hash_table();
-
-    // Проверка наличия ключа в хеш-таблице.
     bool has( const int & key ) const;
-    // Добавление ключа. Возвращает false, если ключ уже есть в хеш-таблице, повторно его не добавляет.
     bool add( const int & key );
-    // Удаление ключа. Возвращает false, если ключа нет в хеш-таблице.
     bool remove( const int & key );
-
     void print();
-
-    int Max();
-
-    int Min();
-
     void resize();
-
-
+    int Max();
+    int Min();
+    
 private:
-
-
+    
     int max;
     int min;
     vector_t data;
     unsigned int current_size;
+    
 };
 
 
 
 l_hash_table::l_hash_table(int max_size) : data(max_size,std::pair<int,bool>(0,false)), current_size(0) {}
 
-l_hash_table::~l_hash_table() {}
+l_hash_table::~l_hash_table() = default;
 
 
 void l_hash_table::resize() {
@@ -159,4 +146,3 @@ void l_hash_table::print() {
 
     for (const auto &obj : data)
         if (obj.second) std::cout<<obj.first;
-}
