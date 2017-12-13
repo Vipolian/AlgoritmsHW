@@ -1,126 +1,183 @@
+
+
+#ifndef HASHMAPS_DOUBLEHM_H
+#define HASHMAPS_DOUBLEHM_H
+
+#endif //HASHMAPS_DOUBLEHM_H
+
+#include <assert.h>
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 
+int my_hash_d(const int & key, int bound) {
 
-unsigned int my_hash(const std::string & key, int bound) {
+    return key % bound;
 
-    
 }
 
-unsigned int my_second_hash(const std::string & key, int bound) {
+ int my_second_hash(const int & key, int bound) {
 
-    return key.empty() ? 0 : (static_cast<unsigned int>(key[0]) % (bound - 1) + 1);
+
+     int hash_d = (int)pow(key, 2.0);
+     hash_d %= bound;
+     if (hash_d == 0) ++hash_d;
+     return hash_d;
 }
 
 
 
-using vector_t = std::vector<std::string>;
+using vector_t = std::vector<std::pair<int,bool>>;
 
 
-class hash_table {
+class d_hash_table {
 
 public:
 
-    explicit hash_table(int max_size);
-    ~hash_table();
-
-    // Проверка наличия ключа в хеш-таблице.
-    bool has( const std::string & key ) const;
-    // Добавление ключа. Возвращает false, если ключ уже есть в хеш-таблице, повторно его не добавляет.
-    bool add( const std::string & key );
-    // Удаление ключа. Возвращает false, если ключа нет в хеш-таблице.
-    bool remove( const std::string & key );
-
+    explicit d_hash_table(int max_size);
+    ~d_hash_table();
+    bool has( const int & key ) const;
+    bool add( const int & key );
+    bool remove( const int & key );
+    void print();
     void resize();
-
-
+    int Max();
+    int Min();
+    
 private:
-
+    
+    int max;
+    int min;
     vector_t data;
     unsigned int current_size;
+    
 };
 
 
 
-hash_table::hash_table(int max_size) : data(max_size, ""), current_size(0) {}
-
-hash_table::~hash_table() {}
+d_hash_table::d_hash_table(int max_size) : data(max_size,std::pair<int,bool>(0,false)), current_size(0) {}
 
 
-void hash_table::resize() {
+d_hash_table::~d_hash_table() {}
+
+
+void d_hash_table::resize() {
 
     vector_t new_data = data;
     data.clear();
     data.resize(data.size() * 2);
 
-    for (const auto & obj: new_data) {
-        add(obj);
-    }
+    data = std::move(new_data);
 
 }
 
 
-bool hash_table::add(const std::string & key) {
+bool d_hash_table::add(const int & key) {
 
     if (this->has(key))
         return false;
 
     if (static_cast<double>(current_size / data.size()) >= 0.75) {
+       
         resize();
+        
     }
 
-    const int hash = my_hash(key, data.size());
+    const int hash = my_hash_d(key, data.size());
 
-
-    if (data[hash] == "") {
-        data[hash] = key;
+    if (!data[hash].second) {
+        
+        data[hash].first = key;
+        data[hash].second = true;
         current_size++;
         return true;
+        
     }
+   
     else {
+        
         int i = 1;
         while (i <= data.size()) {
-            unsigned int new_index = (my_hash(key, data.size()) + i * my_second_hash(key, data.size())) % data.size();
-            if (data[new_index] == "") {
-                data[new_index] = key;
+            
+            unsigned int new_index = (my_hash_d(key, data.size()) + i * my_second_hash(key, data.size())) % data.size();
+           
+            if (!data[new_index].second) {
+                
+                data[new_index].first = key;
+                data[new_index].second = true;
                 current_size++;
                 return true;
+                
             }
+            
             else {
+                
                 i += 1;
+                
             }
         }
+        
         return false;
+        
     }
 }
 
 
-bool hash_table::remove(const std::string & key) {
+bool d_hash_table::remove(const int & key) {
 
-    const int hash = my_hash(key, data.size());
+    int hash = my_hash_d(key, data.size());
 
-    if (data[hash] == "")
+    if (!data[hash].second) {
+
         return false;
 
-    else
-        data[hash] = "";
+    }
 
-    return true;
+    else {
+        
+        int i = 1;
 
+        while (data[hash].first != key) {
+            
+        hash = (my_hash_d(key, data.size()) + i * my_second_hash(key, data.size())) % data.size();
+        ++i;
+            
+    }
+        
+        data[hash].second = false ;
+        --current_size;
+        return true;
+
+    }
 }
 
-bool hash_table::has(const std::string & key) const {
 
-    const int hash = my_hash(key, data.size());
+bool d_hash_table::has(const int & key) const {
 
-    for (int i = hash; i < data.size(); ++i) {
-        if(data[i] == key)
-            return true;
+    int hash = my_hash_d(key, data.size());
+    int i = 1;
+    while (data[hash].first != key) {
+        
+        hash = (my_hash_d(key, data.size()) + i * my_second_hash(key, data.size())) % data.size();
+        ++i;
+        if (i>=data.size()) break;
+        
+    }
+
+    if(data[hash].first == key && data[hash].second == true){
+
+        return true;
+
     }
 
     return false;
 }
 
 
+void d_hash_table::print() {
 
+    for (const auto &obj : data)
+        if (obj.second) std::cout<<obj.first;
+    
+}
