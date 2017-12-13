@@ -1,6 +1,3 @@
-//
-// Created by Vipolion on 09.12.2017.
-//
 
 #ifndef HASHMAP_CHAINHM_H
 #define HASHMAP_CHAINHM_H
@@ -9,117 +6,138 @@
 
 #include <assert.h>
 #include <iostream>
-#include <string>
 #include <vector>
-using std::string;
 
-unsigned int MyEffectiveHash( const string& key, int bound )
+ int my_hash_c(const int &key, int bound)
 {
-    return key.empty() ? 0 : ( static_cast<unsigned int>( key[0] ) % bound );
+    return key % bound;
 }
 
-class CHashTable {
+class c_hash_table {
 public:
-    explicit CHashTable( int initialTableSize );
-    ~CHashTable();
-
-    // Проверка наличия ключа в хеш-таблице.
-    bool Has( const string& key ) const;
-    // Добавление ключа. Возвращает false, если ключ уже есть в хеш-таблице, повторно его не добавляет.
-    bool Add( const string& key );
-    // Удаление ключа. Возвращает false, если ключа нет в хеш-таблице.
-    bool Remove( const string& key );
+    
+    explicit c_hash_table( int initialTableSize );
+    ~c_hash_table();
+    bool Has( const int& key ) const;
+    bool Add( const int& key );
+    bool Remove( const int& key );
+    void print();
+    int Max();
+    int Min();
 
 private:
-    // Узел односвязного списка.
+  
     struct CHashTableNode {
-        string Key;
+        int Key;
         CHashTableNode* Next;
-        explicit CHashTableNode( const string& key ) : Key( key ), Next( nullptr ) {}
+        explicit CHashTableNode( const int& key ) : Key( key ), Next( nullptr ) {}
     };
+    
     std::vector<CHashTableNode*> table;
 };
 
-CHashTable::CHashTable( int initialTableSize ) :
-        table( initialTableSize, nullptr )
-{
-}
 
-CHashTable::~CHashTable()
-{
-    // Удаляем все цепочки.
-    for( int i = 0; i < static_cast<int>( table.size() ); ++i ) {
+c_hash_table::c_hash_table( int initialTableSize ) : table( initialTableSize, nullptr ) {}
+
+
+c_hash_table::~c_hash_table() {
+    
+    for( int i = 0 ; i <  table.size() ; ++i ) {
         CHashTableNode* current = table[i];
         while( current != nullptr ) {
             CHashTableNode* next = current->Next;
             delete current;
             current = next;
+            
         }
     }
 }
 
-bool CHashTable::Has( const string& key ) const
-{
-    const int hash = MyEffectiveHash( key, table.size() );
+
+bool c_hash_table::Has( const int& key ) const {
+    
+    const int hash = my_hash_c(key, table.size());
 
     for( CHashTableNode* node = table[hash]; node != nullptr; node = node->Next ) {
+        
         if( node->Key == key ) {
+            
             return true;
+            
         }
     }
+    
     return false;
+    
 }
 
-bool CHashTable::Add( const string& key )
-{
-    const int hash = MyEffectiveHash( key, table.size() );
+
+bool c_hash_table::Add( const int& key ) {
+    
+    const int hash = my_hash_c(key, table.size());
+    
     for( CHashTableNode* node = table[hash]; node != nullptr; node = node->Next ) {
+       
         if( node->Key == key ) {
+            
             return false;
+        
         }
     }
+    
     CHashTableNode* newNode = new CHashTableNode( key );
     newNode->Next = table[hash];
     table[hash] = newNode;
     return true;
+    
 }
 
-bool CHashTable::Remove( const string& key )
-{
-    const int hash = MyEffectiveHash( key, table.size() );
 
-    // Если пустой список.
+bool c_hash_table::Remove( const int& key ) {
+    
+    const int hash = my_hash_c(key, table.size());
+
+    
     if( table[hash] == nullptr ) {
+       
         return false;
     }
-    // Если удаляемый ключ - первый.
+    
     if( table[hash]->Key == key ) {
         CHashTableNode* toDelete = table[hash];
         table[hash] = toDelete->Next;
         delete toDelete;
         return true;
+        
     }
 
     for( CHashTableNode* prev = table[hash]; prev->Next != nullptr; prev = prev->Next ) {
-        // Если удаляемый ключ - следующий.
+        
         if( prev->Next->Key == key ) {
             CHashTableNode* toDelete = prev->Next;
             prev->Next = toDelete->Next;
             delete toDelete;
             return true;
+            
         }
     }
-
-    // Предыдущий код можно заменить на следующий:
-    //for( CHashTableNode** node = &table[hash]; *node != nullptr; node = &( ( *node )->Next ) ) {
-    //  if( ( *node )->Key == key ) {
-    //      CHashTableNode* toDelete = *node;
-    //      *node = toDelete->Next;
-    //      delete toDelete;
-    //      return true;
-    //  }
-    //}
+    
     return false;
+    
 }
 
 
+void c_hash_table::print() {
+    
+    for( int i = 0; i < static_cast<int>( table.size() ); ++i ) {
+       
+        CHashTableNode* current = table[i];
+        while( current != nullptr ) {
+            CHashTableNode* next = current->Next;
+            std::cout << current->Key << std::endl;
+            current = next;
+
+        }
+    }
+    
+}
