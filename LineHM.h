@@ -1,147 +1,162 @@
-class LineHashingMap : public HashMap {
-protected:
-	vector<pair<int, int>*>* data;
-	//
-	int getNextPrime();
-	virtual void resize(int capacity);
+
+#ifndef HASHMAPS_LINEHM_H
+#define HASHMAPS_LINEHM_H
+
+#endif //HASHMAPS_LINEHM_H
+
+
+#include <assert.h>
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+
+int my_hash_l(const int & key, int bound) {
+
+    return key % bound;
+
+}
+
+
+
+
+
+using vector_t = std::vector<std::pair<int,bool>>;
+
+
+class l_hash_table {
+
 public:
-	LineHashingMap();
-	virtual ~LineHashingMap();
-	virtual void insert(int key, int value);
-	virtual pair<int, bool> find(int key);
-	virtual void erase(int key);
-	virtual void print(ostream& stream);
-	virtual int getHash(int key);
-	virtual pair<int, bool> min();
-	virtual pair<int, bool> max();
-	virtual void clear();
+
+    explicit l_hash_table(int max_size);
+    ~l_hash_table();
+
+    // Проверка наличия ключа в хеш-таблице.
+    bool has( const int & key ) const;
+    // Добавление ключа. Возвращает false, если ключ уже есть в хеш-таблице, повторно его не добавляет.
+    bool add( const int & key );
+    // Удаление ключа. Возвращает false, если ключа нет в хеш-таблице.
+    bool remove( const int & key );
+
+    void print();
+
+    int Max();
+
+    int Min();
+
+    void resize();
+
+
+private:
+
+
+    int max;
+    int min;
+    vector_t data;
+    unsigned int current_size;
 };
 
-LineHashingMap::LineHashingMap() {
-	data = new vector<pair<int, int>*>(PRIMARY_VECTOR_CAPACITY);
+
+
+l_hash_table::l_hash_table(int max_size) : data(max_size,std::pair<int,bool>(0,false)), current_size(0) {}
+
+l_hash_table::~l_hash_table() {}
+
+
+void l_hash_table::resize() {
+
+    vector_t new_data = data;
+    data.clear();
+    data.resize(data.size() * 2);
+
+    data = std::move(new_data);
+
 }
 
-LineHashingMap::~LineHashingMap() {
-	for (unsigned int i = 0; i < data->capacity(); ++i)
-		delete data->at(i);
-	delete data;
+
+bool l_hash_table::add(const int & key) {
+
+    if (this->has(key))
+        return false;
+
+    if (static_cast<double>(current_size / data.size()) >= 0.75) {
+        resize();
+    }
+
+    const int hash = my_hash_l(key, data.size());
+
+
+    if (!data[hash].second) {
+        data[hash].first = key;
+        data[hash].second = true;
+        current_size++;
+        return true;
+    }
+    else {
+        int i = hash;
+        while (i < data.size()+hash) {
+            unsigned int new_index = (i+1) % data.size();
+            if (!data[new_index].second) {
+                data[new_index].first = key;
+                data[new_index].second = true;
+                current_size++;
+                return true;
+            }
+            else {
+                i += 1;
+            }
+        }
+        return false;
+    }
 }
 
-void LineHashingMap::clear() {
-	for (unsigned int i = 0; i < data->capacity(); ++i)
-		delete data->at(i);
-	coefficient = 0.0f;
-	data->clear();
-	data->shrink_to_fit();
-	data->resize(PRIMARY_VECTOR_CAPACITY);
+
+bool l_hash_table::remove(const int & key) {
+
+    int hash = my_hash_l(key, data.size());
+
+    if (!data[hash].second)
+        return false;
+
+    else {
+        int i = 0;
+
+        while (data[hash].first != key && i<data.size()) {
+            hash = (hash+1)%data.size();
+            ++i;
+        }
+        data[hash].second = false ;
+
+        --current_size;
+        return true;
+
+    }
+
+
+
 }
 
-void LineHashingMap::insert(int key, int value) {
-	if (key > 0) {
-		if (coefficient >= RESIZE_COEFF_VALUE)
-			resize(getNextPrime());
-		//
-		int i;
-		for (i = getHash(key); data->at(i) != nullptr && data->at(i)->first != INVALID_KEY; i = (i + INTERVAL) % data->capacity()) {
-			if (data->at(i)->first == key) {
-				data->at(i)->second = value;
-				return;
-			}
-		}
-		delete data->at(i);
-		data->at(i) = new pair<int, int>(key, value);
-		coefficient += 1.0f / (float)data->capacity();
-	}
+bool l_hash_table::has(const int & key) const {
+
+    int hash = my_hash_l(key, data.size());
+    int i = 1;
+    while (data[hash].first != key && i<data.size()) {
+        hash = (hash+1)%data.size();
+        ++i;
+        if (i >= data.size()) break;
+    }
+
+    if (data[hash].first == key && data[hash].second == true) {
+
+        return true;
+
+    }
+
+    return false;
 }
 
-pair<int, bool> LineHashingMap::find(int key) {
-	if (key > 0) {
-		for (int i = getHash(key); data->at(i) != nullptr; i = (i + INTERVAL) % data->capacity()) {
-			if (data->at(i)->first == key)
-				return pair<int, bool>(data->at(i)->second, true);
-		}
-	}
-	return pair<int, bool>(0, false);
-}
+void l_hash_table::print() {
 
-void LineHashingMap::erase(int key) {
-	if (key > 0) {
-		for (int i = getHash(key); data->at(i) != nullptr; i = (i + INTERVAL) % data->capacity()) {
-			if (data->at(i)->first == key) {
-				data->at(i)->first = INVALID_KEY;
-				coefficient -= 1.0f / (float)data->capacity();
-				break;
-			}
-		}
-	}
-}
-
-void LineHashingMap::print(ostream& stream) {
-	stream << "PRINT\n";
-	for (unsigned int i = 0; i < data->capacity(); ++i) {
-		if (data->at(i) != nullptr && data->at(i)->first != INVALID_KEY)
-			stream << "KEY: " << data->at(i)->first << "\tVALUE: " << data->at(i)->second << "\n";
-	}
-	stream << "\n\n";
-}
-
-int LineHashingMap::getHash(int key) {
-	return key % data->capacity();
-}
-
-int LineHashingMap::getNextPrime() {
-	bool flag = true;
-	for (unsigned int i = data->capacity() * 2;; ++i, flag = true) {
-		for (unsigned int j = 2; j < i - 1; ++j)
-			if (i % j == 0) {
-				flag = false;
-				break;
-			}
-		if (flag) return i;
-	}
-}
-
-pair<int, bool> LineHashingMap::min() {
-	pair<int, bool> min(0, false);
-	for (unsigned int i = 0; i < data->capacity(); ++i)
-		if (data->at(i) != nullptr && data->at(i)->first != INVALID_KEY) {
-			min.first = data->at(i)->second;
-			min.second = true;
-			break;
-		}
-	//
-	for (unsigned int i = 0; i < data->capacity(); ++i)
-		if (data->at(i) != nullptr && data->at(i)->first != INVALID_KEY)
-			if (data->at(i)->second < min.first)
-				min.first = data->at(i)->second;
-	return min;
-}
-
-pair<int, bool> LineHashingMap::max() {
-	pair<int, bool> max(0, false);
-	for (unsigned int i = 0; i < data->capacity(); ++i)
-		if (data->at(i) != nullptr && data->at(i)->first != INVALID_KEY) {
-			max.first = data->at(i)->second;
-			max.second = true;
-			break;
-		}
-	//
-	for (unsigned int i = 0; i < data->capacity(); ++i)
-		if (data->at(i) != nullptr && data->at(i)->first != INVALID_KEY)
-			if (data->at(i)->second > max.first)
-				max.first = data->at(i)->second;
-	return max;
-}
-
-void LineHashingMap::resize(int capacity) {
-	vector<pair<int, int>*>* oldData = new vector<pair<int, int>*>(*data);
-	coefficient = 0.0f;
-	data->clear();
-	data->resize(capacity);
-	for (unsigned int i = 0; i < oldData->capacity(); ++i) {
-		if (oldData->at(i) != nullptr && oldData->at(i)->first != INVALID_KEY)
-			insert(oldData->at(i)->first, oldData->at(i)->second);
-		delete oldData->at(i);
-	}
-	delete oldData;
+    for (const auto &obj : data)
+        if (obj.second) std::cout<<obj.first;
 }
