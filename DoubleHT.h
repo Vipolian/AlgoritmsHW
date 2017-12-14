@@ -1,4 +1,6 @@
-
+//
+// Created by Vipolion on 13.12.2017.
+//
 
 #ifndef HASHMAPS_DOUBLEHM_H
 #define HASHMAPS_DOUBLEHM_H
@@ -40,7 +42,7 @@ public:
     bool has( const int & key ) const;
     bool add( const int & key );
     bool remove( const int & key );
-    void print();
+    void print(std::ostream&);
     void resize();
     int Max();
     int Min();
@@ -144,7 +146,7 @@ bool d_hash_table::remove(const int & key) {
         ++i;
             
     }
-        
+
         data[hash].second = false ;
         --current_size;
         return true;
@@ -175,9 +177,14 @@ bool d_hash_table::has(const int & key) const {
 }
 
 
-void d_hash_table::print() {
+void d_hash_table::print(std::ostream &outputstream) {
 
-    for (const auto &obj : data)
-        if (obj.second) std::cout<<obj.first;
-    
+    for (const auto &obj : data) {
+
+        if (obj.second) {
+
+            outputstream << obj.first<<" ";
+
+        }
+    }
 }
