@@ -1,3 +1,7 @@
+//
+// Created by Vipolion on 13.12.2017.
+//
+
 #ifndef HASHMAPS_LINEHM_H
 #define HASHMAPS_LINEHM_H
 
@@ -29,23 +33,23 @@ public:
     bool has( const int & key ) const;
     bool add( const int & key );
     bool remove( const int & key );
-    void print();
+    void print(std::ostream&);
     void resize();
     int Max();
     int Min();
-    
+
 private:
-    
+
     int max;
     int min;
     vector_t data;
     unsigned int current_size;
-    
+
 };
 
 
-
 l_hash_table::l_hash_table(int max_size) : data(max_size,std::pair<int,bool>(0,false)), current_size(0) {}
+
 
 l_hash_table::~l_hash_table() = default;
 
@@ -55,7 +59,6 @@ void l_hash_table::resize() {
     vector_t new_data = data;
     data.clear();
     data.resize(data.size() * 2);
-
     data = std::move(new_data);
 
 }
@@ -63,10 +66,14 @@ void l_hash_table::resize() {
 
 bool l_hash_table::add(const int & key) {
 
-    if (this->has(key))
+    if (this->has(key)) {
+
         return false;
 
+    }
+
     if (static_cast<double>(current_size / data.size()) >= 0.75) {
+
         resize();
     }
 
@@ -79,20 +86,31 @@ bool l_hash_table::add(const int & key) {
         current_size++;
         return true;
     }
+
     else {
+
         int i = hash;
+
         while (i < data.size()+hash) {
+
             unsigned int new_index = (i+1) % data.size();
+
             if (!data[new_index].second) {
+
                 data[new_index].first = key;
                 data[new_index].second = true;
                 current_size++;
                 return true;
+
             }
+
             else {
+
                 i += 1;
+
             }
         }
+
         return false;
     }
 }
@@ -106,14 +124,15 @@ bool l_hash_table::remove(const int & key) {
         return false;
 
     else {
+
         int i = 0;
 
         while (data[hash].first != key && i<data.size()) {
             hash = (hash+1)%data.size();
             ++i;
         }
-        data[hash].second = false ;
 
+        data[hash].second = false ;
         --current_size;
         return true;
 
@@ -142,7 +161,14 @@ bool l_hash_table::has(const int & key) const {
     return false;
 }
 
-void l_hash_table::print() {
+void l_hash_table::print(std::ostream &outputstream) {
 
-    for (const auto &obj : data)
-        if (obj.second) std::cout<<obj.first;
+    for (const auto &obj : data) {
+
+        if (obj.second) {
+
+            outputstream << obj.first<<" ";
+
+        }
+    }
+}
