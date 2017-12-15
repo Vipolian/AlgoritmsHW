@@ -87,16 +87,6 @@ int main() {
             }
         }
 
-//        if (line == "min") {
-//            fileOut << DoubleH.Min() << std::endl;
-//        }
-//        if (line == "max") {
-//            fileOut << DoubleH.Max() << std::endl;
-//        }
-//        if (line == " ") {
-//            fileOut << "error" << std::endl;
-//        }
-        }
 
 
         stop = std::chrono::high_resolution_clock::now();
@@ -149,16 +139,7 @@ int main() {
                 }
             }
 
-//        if (line == "min") {
-//            fileOut << DoubleH.Min() << std::endl;
-//        }
-//        if (line == "max") {
-//            fileOut << DoubleH.Max() << std::endl;
-//        }
-//        if (line == " ") {
-//            fileOut << "error" << std::endl;
-
-//        }
+   
             }
 
 
@@ -211,15 +192,7 @@ int main() {
                     }
 
                 }
-//        if (line == "min") {
-//            fileOut << DoubleH.Min() << std::endl;
-//        }
-//        if (line == "max") {
-//            fileOut << DoubleH.Max() << std::endl;
-//        }
-//        if (line == " ") {
-//            fileOut << "error" << std::endl;
-//        }
+
             }
 
 
