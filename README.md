@@ -96,34 +96,34 @@ _______________
 
  5 тестам соответвуют 5 сценариев использования. В первом добавим в структуру 25 значений, удалим 5 из них и выведем структуру. 
 
-    correct 
+      correct 
 
-    Double_HT runtime = 217
-    Line_HT runtime = 102
-    Chain_HT runtime = 91
+      Double_HT runtime = 217
+      Line_HT runtime = 102
+      Chain_HT runtime = 91
 
  Во втором добавим 7 значений, выведем структуру и 50 раз выволним поиск
 
-    correct
+      correct
 
-    Double_HT runtime = 895
-    Line_HT runtime = 735
-    Chain_HT runtime = 718
+      Double_HT runtime = 895
+      Line_HT runtime = 735
+      Chain_HT runtime = 718
 
   В третьем добавим 50 значений, удалим 45 из них и выведем структуру
  
-      correct
+       correct
        
-      Double_HT runtime = 523
-      Line_HT runtime = 672
-      Chain_HT runtime = 612
+       Double_HT runtime = 523
+       Line_HT runtime = 672
+       Chain_HT runtime = 612
 
   В четвертом, пятом и шестом тесте будем добавлять 500, 1500 и 5000 значений соотвественно. Результат их выполения программой не проверяется
 
-      Double_HT runtime = 3258      Double_HT runtime = 13635     Double_HT runtime = 42813  
-      Line_HT runtime = 1515        Line_HT runtime = 6975        Line_HT runtime = 60515
-      Chain_HT runtime = 916        Chain_HT runtime = 5061       Chain_HT runtime = 34625
-   
+       Double_HT runtime = 3258      Double_HT runtime = 13635     Double_HT runtime = 42813  
+       Line_HT runtime = 1515        Line_HT runtime = 6975        Line_HT runtime = 60515
+       Chain_HT runtime = 916        Chain_HT runtime = 5061       Chain_HT runtime = 34625
+    
  Выводы: При каждом из сценариев лучшие результаты показывает хэш таблица, использующая для разрешения коллизий дополнительные цепочки. Но они и являются главным недостатком, так как значения не хранятся в самой таблице и занимают, а массивы с ними занимают дополнительную память. Метод линейного опробования и метод двойного хэширования в целом схожи. Первый, при небольшом количестве элементов, работает в разы быстрее, но с ростом количества элеменнтов сначала разница во времени работы уменьшается а позже и вовсе рнонходит в пользу второго.  подтверждается математически в (Приложение 1.pdf). 
 
 
