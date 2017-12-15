@@ -88,11 +88,11 @@ _______________
  
  Пример вывода:
  
-Not correct
+    Not correct
 
-Double_HT runtime = 20350
-Line_HT runtime = 24558
-Chain_HT runtime = 20688
+    Double_HT runtime = 20350
+    Line_HT runtime = 24558
+    Chain_HT runtime = 20688
 
  5 тестам соответвуют 5 сценариев использования. В первом добавим в структуру 25 значений, удалим 5 из них и выведем структуру. 
 
