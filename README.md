@@ -103,24 +103,24 @@ Chain_HT runtime = 91
 
 correct
 
-Double_HT runtime = 895
-Line_HT runtime = 735
-Chain_HT runtime = 718
+    Double_HT runtime = 895
+    Line_HT runtime = 735
+    Chain_HT runtime = 718
 
   В третьем добавим 50 значений, удалим 45 из них и выведем структуру
  
  correct
 
-Double_HT runtime = 523
-Line_HT runtime = 672
-Chain_HT runtime = 612
+      Double_HT runtime = 523
+      Line_HT runtime = 672
+      Chain_HT runtime = 612
 
   В четвертом, пятом и шестом тесте будем добавлять 500, 1500 и 3000 значений соотвественно. Результат их выполения программой не проверяется
 
-Double_HT runtime = 3258      Double_HT runtime = 13635     Double_HT runtime = 27813  
-Line_HT runtime = 1515        Line_HT runtime = 6975        Line_HT runtime = 20515
-Chain_HT runtime = 916        Chain_HT runtime = 5061       Chain_HT runtime = 7625
-Chain_HT runtime = 7625
+      Double_HT runtime = 3258      Double_HT runtime = 13635     Double_HT runtime = 27813  
+      Line_HT runtime = 1515        Line_HT runtime = 6975        Line_HT runtime = 20515
+      Chain_HT runtime = 916        Chain_HT runtime = 5061       Chain_HT runtime = 7625
+   
  
 
 
