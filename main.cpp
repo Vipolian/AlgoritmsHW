@@ -18,10 +18,11 @@ int FindValue(const std::string &str) {
 
 }
 
-
 bool FileIsEqual(const std::string &firstFileName, const std::string &secondFileName) {
-
     std::ifstream firstFile(firstFileName), secondFile(secondFileName);
+    assert(firstFile);
+    assert(secondFile);
+
     std::string buffer1((std::istreambuf_iterator<char>(firstFile)), std::istreambuf_iterator<char>());
     std::string buffer2((std::istreambuf_iterator<char>(secondFile)), std::istreambuf_iterator<char>());
     firstFile.close();
@@ -34,9 +35,10 @@ bool FileIsEqual(const std::string &firstFileName, const std::string &secondFile
 int main() {
 
     std::string line;
-    std::ifstream fileIn("/Users/Vipolion/Documents/ALG/HashMaps/in.txt");
-    std::ofstream fileOut("/Users/Vipolion/Documents/ALG/HashMaps/out.txt");
-    std::ifstream fileCorrect("/Users/Vipolion/Documents/ALG/HashMaps/true.txt");
+    std::ifstream fileIn(argv[1]);
+    assert(fileIn);
+    std::ofstream fileOut(argv[2]);
+    assert(fileOut);
 
 
     d_hash_table DoubleH(11);
@@ -201,21 +203,23 @@ int main() {
 
 
             fileIn.close();
-            fileOut.close();
+            
 
 
-            if (FileIsEqual("/Users/Vipolion/Documents/ALG/HashMaps/out.txt",
-                            "/Users/Vipolion/Documents/ALG/HashMaps/true.txt")) {
-
-                std::cout << std::endl << "Correct";
-            } else {
-
-                std::cout << std::endl << "Not correct";
-
-            }
+            if (FileIsEqual(argv[2], argv[3])) {
+                
+                 std::cout << "Correct" << std::endl;
+                
+                }
+        
+                 else {
+                
+                    std::cout << "Not correct" << std::endl;
+                }
 
             fileCorrect.close();
-
-        }
+            fileOut.close();
+            
+    }
 
 
