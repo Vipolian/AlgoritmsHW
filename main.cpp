@@ -74,7 +74,7 @@ int main() {
 
         }
 
-        if (line.find("search") == 0) {
+        if (line.find("has") == 0) {
 
             if (!DoubleH.has(FindValue(line))) {
 
@@ -136,7 +136,7 @@ int main() {
 
             }
 
-            if (line.find("search") == 0) {
+            if (line.find("has") == 0) {
 
                 if (!LineH.has(FindValue(line))) {
 
@@ -199,7 +199,7 @@ int main() {
 
                 }
 
-                if (line.find("search") == 0) {
+                if (line.find("has") == 0) {
 
                     if (!ChainH.has(FindValue(line))) {
 
