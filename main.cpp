@@ -1,9 +1,10 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include "DoubleHT.h"
-#include "LineHT.h"
-#include "ChainHT.h"
+#include <chrono>
+#include "DoubleHT.hpp"
+#include "LineHT.hpp"
+#include "ChainHT.hpp"
 
 
 int FindValue(const std::string &str) {
@@ -32,7 +33,7 @@ bool FileIsEqual(const std::string &firstFileName, const std::string &secondFile
 }
 
 
-int main() {
+int main(int argc, char *argv[]) {
 
     std::string line;
     std::ifstream fileIn(argv[1]);
@@ -88,6 +89,7 @@ int main() {
 
             }
         }
+    }
 
 
 
@@ -142,7 +144,7 @@ int main() {
             }
 
    
-            }
+        }
 
 
             stop = std::chrono::high_resolution_clock::now();
@@ -205,7 +207,6 @@ int main() {
             fileIn.close();
             
 
-
             if (FileIsEqual(argv[2], argv[3])) {
                 
                  std::cout << "Correct" << std::endl;
@@ -217,9 +218,8 @@ int main() {
                     std::cout << "Not correct" << std::endl;
                 }
 
-            fileCorrect.close();
-            fileOut.close();
-            
+         fileOut.close();
+
     }
 
 

@@ -1,44 +1,13 @@
 //
-// Created by Vipolion on 09.12.2017.
+// Created by Vipolion on 20.12.2017.
 //
 
-#ifndef HASHMAP_CHAINHM_H
-#define HASHMAP_CHAINHM_H
+#include "ChainHT.hpp"
 
-#endif //HASHMAP_CHAINHM_H
-
-#include <assert.h>
-#include <iostream>
-#include <vector>
-
- int my_hash_c(const int &key, int bound)
+int my_hash_c(const int &key, int bound)
 {
     return key % bound;
 }
-
-class c_hash_table {
-public:
-
-    explicit c_hash_table( int initialTableSize );
-    ~c_hash_table();
-    bool has(const int &key) const;
-    bool add(const int &key);
-    bool remove(const int &key);
-    void print(std::ostream&);
-    int Max();
-    int Min();
-
-private:
-
-    struct CHashTableNode {
-        int Key;
-        CHashTableNode* Next;
-        explicit CHashTableNode( const int& key ) : Key( key ), Next( nullptr ) {}
-    };
-
-    std::vector<CHashTableNode*> table;
-};
-
 
 c_hash_table::c_hash_table( int initialTableSize ) : table( initialTableSize, nullptr ) {}
 
