@@ -57,6 +57,9 @@ bool c_hash_table::add(const int &key) {
         }
     }
 
+    if (max < key) { max = key; }
+    if (min> key) { min = key; }
+
     CHashTableNode* newNode = new CHashTableNode( key );
     newNode->Next = table[hash];
     table[hash] = newNode;
@@ -111,5 +114,16 @@ void c_hash_table::print(std::ostream &outputstream) {
 
         }
     }
+
+}
+
+int c_hash_table::Min() {
+
+    return min;
+}
+
+int c_hash_table::Max() {
+
+    return max;
 
 }

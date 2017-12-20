@@ -36,8 +36,8 @@ public:
 
 private:
 
-    int max;
-    int min;
+    int max=0;
+    int min=0;
     vector_t data;
     unsigned int current_size;
 

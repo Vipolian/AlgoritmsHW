@@ -89,6 +89,19 @@ int main(int argc, char *argv[]) {
 
             }
         }
+
+        if (line.find("min") == 0) {
+
+            fileOut << DoubleH.Min() << std::endl;
+
+        }
+
+        if (line.find("min") == 0) {
+
+            fileOut << DoubleH.Max() << std::endl;
+
+        }
+
     }
 
 
@@ -143,6 +156,18 @@ int main(int argc, char *argv[]) {
                 }
             }
 
+            if (line.find("min") == 0) {
+
+                fileOut << LineH.Min() << std::endl;
+
+            }
+
+            if (line.find("min") == 0) {
+
+                fileOut << LineH.Max() << std::endl;
+
+            }
+
    
         }
 
@@ -194,6 +219,18 @@ int main(int argc, char *argv[]) {
 
                         fileOut << FindValue(line) << " has found" << std::endl;
                     }
+
+                }
+
+                if (line.find("min") == 0) {
+
+                    fileOut << ChainH.Min() << std::endl;
+
+                }
+
+                if (line.find("min") == 0) {
+
+                    fileOut << ChainH.Max() << std::endl;
 
                 }
 

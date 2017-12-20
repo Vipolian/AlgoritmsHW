@@ -41,6 +41,8 @@ bool l_hash_table::add(const int & key) {
 
     const int hash = my_hash_l(key, data.size());
 
+    if (max < key) { max = key; }
+    if (min> key) { min = key; }
 
     if (!data[hash].second) {
         data[hash].first = key;
@@ -133,4 +135,15 @@ void l_hash_table::print(std::ostream &outputstream) {
 
         }
     }
+}
+
+int l_hash_table::Min() {
+
+    return min;
+}
+
+int l_hash_table::Max() {
+
+    return max;
+
 }

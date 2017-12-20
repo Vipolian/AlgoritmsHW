@@ -49,6 +49,9 @@ bool d_hash_table::add(const int & key) {
 
     const int hash = my_hash_d(key, data.size());
 
+    if (max < key) { max = key; }
+    if (min> key) { min = key; }
+
     if (!data[hash].second) {
 
         data[hash].first = key;
@@ -148,4 +151,15 @@ void d_hash_table::print(std::ostream &outputstream) {
 
         }
     }
+}
+
+int d_hash_table::Min() {
+
+    return min;
+}
+
+int d_hash_table::Max() {
+
+    return max;
+
 }

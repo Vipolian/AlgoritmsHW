@@ -31,6 +31,8 @@ private:
         explicit CHashTableNode( const int& key ) : Key( key ), Next( nullptr ) {}
     };
 
+    int min=0;
+    int max=0;
     std::vector<CHashTableNode*> table;
 };
 
