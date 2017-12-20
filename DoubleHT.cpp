@@ -19,7 +19,7 @@ int my_second_hash(const int & key, int bound) {
     return hash_d;
 }
 
-d_hash_table::d_hash_table(int max_size) : data(max_size,std::pair<int,bool>(0,false)), current_size(0) {}
+d_hash_table::d_hash_table(int max_size) : data( max_size, std::pair<std::pair<int,int>,bool> ((0,0),false) ), current_size(0) {}
 
 
 d_hash_table::~d_hash_table() {}
@@ -36,10 +36,11 @@ void d_hash_table::resize() {
 }
 
 
-bool d_hash_table::add(const int & key) {
+bool d_hash_table::add( std::pair<int,int> pair ) {
 
-    if (this->has(key))
+    if (this->has(pair.key)){
         return false;
+    }
 
     if (static_cast<double>(current_size / data.size()) >= 0.75) {
 
@@ -47,14 +48,16 @@ bool d_hash_table::add(const int & key) {
 
     }
 
-    const int hash = my_hash_d(key, data.size());
+    const int hash = my_hash_d(pair.first, data.size());
 
-    if (max < key) { max = key; }
-    if (min> key) { min = key; }
+    if (max < pair.first) { max = pair.first; }
+    if (min> pair.first) { min = pair.first; }
+
 
     if (!data[hash].second) {
 
-        data[hash].first = key;
+        data[hash].first.first = pair.first;
+        data[hash].first.second = pair.second;
         data[hash].second = true;
         current_size++;
         return true;
@@ -66,11 +69,12 @@ bool d_hash_table::add(const int & key) {
         int i = 1;
         while (i <= data.size()) {
 
-            unsigned int new_index = (my_hash_d(key, data.size()) + i * my_second_hash(key, data.size())) % data.size();
+            unsigned int new_index = (my_hash_d(pair.first, data.size()) + i * my_second_hash(pair.first, data.size())) % data.size();
 
             if (!data[new_index].second) {
 
-                data[new_index].first = key;
+                data[new_index].first.first = pair.first;
+                data[new_index].first.second = pair.second;
                 data[new_index].second = true;
                 current_size++;
                 return true;
@@ -104,7 +108,7 @@ bool d_hash_table::remove(const int & key) {
 
         int i = 1;
 
-        while (data[hash].first != key) {
+        while (data[hash].first.first != key) {
 
             hash = (my_hash_d(key, data.size()) + i * my_second_hash(key, data.size())) % data.size();
             ++i;
@@ -119,11 +123,11 @@ bool d_hash_table::remove(const int & key) {
 }
 
 
-bool d_hash_table::has(const int & key) const {
+bool d_hash_table::has( const int & key ) const {
 
-    int hash = my_hash_d(key, data.size());
+    int hash = my_hash_d( key, data.size() );
     int i = 1;
-    while (data[hash].first != key) {
+    while (data[hash].first.first != key) {
 
         hash = (my_hash_d(key, data.size()) + i * my_second_hash(key, data.size())) % data.size();
         ++i;
@@ -131,13 +135,8 @@ bool d_hash_table::has(const int & key) const {
 
     }
 
-    if(data[hash].first == key && data[hash].second == true){
+    return data[hash].first.first == key && data[hash].second;
 
-        return true;
-
-    }
-
-    return false;
 }
 
 
@@ -147,7 +146,7 @@ void d_hash_table::print(std::ostream &outputstream) {
 
         if (obj.second) {
 
-            outputstream << obj.first<<" ";
+            outputstream << obj.first.second<<" ";
 
         }
     }

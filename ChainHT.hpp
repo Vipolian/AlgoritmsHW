@@ -17,7 +17,7 @@ public:
     explicit c_hash_table( int initialTableSize );
     ~c_hash_table();
     bool has(const int &key) const;
-    bool add(const int &key);
+    bool add( std::pair<int,int> pair );
     bool remove(const int &key);
     void print(std::ostream&);
     int Max();
@@ -26,9 +26,9 @@ public:
 private:
 
     struct CHashTableNode {
-        int Key;
+        std::pair<int,int> data;
         CHashTableNode* Next;
-        explicit CHashTableNode( const int& key ) : Key( key ), Next( nullptr ) {}
+        explicit CHashTableNode( std::pair<int,int> pair ) : data(pair), Next( nullptr ) {}
     };
 
     int min=0;

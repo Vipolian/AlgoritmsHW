@@ -10,7 +10,7 @@ int my_hash_l(const int & key, int bound) {
 
 }
 
-l_hash_table::l_hash_table(int max_size) : data(max_size,std::pair<int,bool>(0,false)), current_size(0) {}
+l_hash_table::l_hash_table(int max_size) : data( max_size, std::pair<std::pair<int,int>,bool> ((0,0),false) ), current_size(0) {}
 
 
 l_hash_table::~l_hash_table() = default;
@@ -26,9 +26,9 @@ void l_hash_table::resize() {
 }
 
 
-bool l_hash_table::add(const int & key) {
+bool l_hash_table::add( std::pair<int,int> pair ) {
 
-    if (this->has(key)) {
+    if (this->has(pair.first)) {
 
         return false;
 
@@ -39,13 +39,12 @@ bool l_hash_table::add(const int & key) {
         resize();
     }
 
-    const int hash = my_hash_l(key, data.size());
+    const int hash = my_hash_l(pair.first, data.size());
 
-    if (max < key) { max = key; }
-    if (min> key) { min = key; }
 
     if (!data[hash].second) {
-        data[hash].first = key;
+        data[hash].first.first = pair.first;
+        data[hash].first.second = pair.second;
         data[hash].second = true;
         current_size++;
         return true;
@@ -61,7 +60,8 @@ bool l_hash_table::add(const int & key) {
 
             if (!data[new_index].second) {
 
-                data[new_index].first = key;
+                data[new_index].first.first = pair.first;
+                data[new_index].first.second = pair.second;
                 data[new_index].second = true;
                 current_size++;
                 return true;
@@ -80,7 +80,7 @@ bool l_hash_table::add(const int & key) {
 }
 
 
-bool l_hash_table::remove(const int & key) {
+bool l_hash_table::remove( const int & key ) {
 
     int hash = my_hash_l(key, data.size());
 
@@ -91,7 +91,7 @@ bool l_hash_table::remove(const int & key) {
 
         int i = 0;
 
-        while (data[hash].first != key && i<data.size()) {
+        while (data[hash].first.first != key && i<data.size()) {
             hash = (hash+1)%data.size();
             ++i;
         }
@@ -106,23 +106,18 @@ bool l_hash_table::remove(const int & key) {
 
 }
 
-bool l_hash_table::has(const int & key) const {
+bool l_hash_table::has( const int & key ) const {
 
     int hash = my_hash_l(key, data.size());
     int i = 1;
-    while (data[hash].first != key && i<data.size()) {
+    while (data[hash].first.first != key && i<data.size()) {
         hash = (hash+1)%data.size();
         ++i;
         if (i >= data.size()) break;
     }
 
-    if (data[hash].first == key && data[hash].second == true) {
+    return data[hash].first.first == key && data[hash].second;
 
-        return true;
-
-    }
-
-    return false;
 }
 
 void l_hash_table::print(std::ostream &outputstream) {
@@ -131,7 +126,7 @@ void l_hash_table::print(std::ostream &outputstream) {
 
         if (obj.second) {
 
-            outputstream << obj.first<<" ";
+            outputstream << obj.first.second<<" ";
 
         }
     }

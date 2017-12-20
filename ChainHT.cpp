@@ -26,13 +26,13 @@ c_hash_table::~c_hash_table() {
 }
 
 
-bool c_hash_table::has(const int &key) const {
+bool c_hash_table::has( const int &key ) const {
 
     const int hash = my_hash_c(key, table.size());
 
     for( CHashTableNode* node = table[hash]; node != nullptr; node = node->Next ) {
 
-        if( node->Key == key ) {
+        if( node->data.first == key ) {
 
             return true;
 
@@ -44,23 +44,23 @@ bool c_hash_table::has(const int &key) const {
 }
 
 
-bool c_hash_table::add(const int &key) {
+bool c_hash_table::add( std::pair<int,int> pair ) {
 
-    const int hash = my_hash_c(key, table.size());
+    const int hash = my_hash_c( pair.first, table.size() );
 
     for( CHashTableNode* node = table[hash]; node != nullptr; node = node->Next ) {
 
-        if( node->Key == key ) {
+        if( node->data.first == pair.first ) {
 
             return false;
 
         }
     }
 
-    if (max < key) { max = key; }
-    if (min> key) { min = key; }
+    if (max < pair.first) { max = pair.first; }
+    if (min> pair.first) { min = pair.first; }
 
-    CHashTableNode* newNode = new CHashTableNode( key );
+    CHashTableNode* newNode = new CHashTableNode( pair );
     newNode->Next = table[hash];
     table[hash] = newNode;
     return true;
@@ -70,7 +70,7 @@ bool c_hash_table::add(const int &key) {
 
 bool c_hash_table::remove(const int &key) {
 
-    const int hash = my_hash_c(key, table.size());
+    const int hash = my_hash_c( key, table.size() );
 
 
     if( table[hash] == nullptr ) {
@@ -78,7 +78,8 @@ bool c_hash_table::remove(const int &key) {
         return false;
     }
 
-    if( table[hash]->Key == key ) {
+    if( table[hash]->data.first == key ) {
+
         CHashTableNode* toDelete = table[hash];
         table[hash] = toDelete->Next;
         delete toDelete;
@@ -88,7 +89,8 @@ bool c_hash_table::remove(const int &key) {
 
     for( CHashTableNode* prev = table[hash]; prev->Next != nullptr; prev = prev->Next ) {
 
-        if( prev->Next->Key == key ) {
+        if( prev->Next->data.first == key ) {
+
             CHashTableNode* toDelete = prev->Next;
             prev->Next = toDelete->Next;
             delete toDelete;
@@ -109,7 +111,7 @@ void c_hash_table::print(std::ostream &outputstream) {
         CHashTableNode* current = table[i];
         while( current != nullptr ) {
             CHashTableNode* next = current->Next;
-            outputstream << current->Key << " ";
+            outputstream << current->data.second << " ";
             current = next;
 
         }
