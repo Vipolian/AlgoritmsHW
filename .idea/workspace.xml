@@ -39,7 +39,7 @@
               <entry file="file://$PROJECT_DIR$/LineHT.cpp">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="804">
-                    <caret line="118" column="57" lean-forward="false" selection-start-line="118" selection-start-column="57" selection-end-line="118" selection-end-column="57" />
+                    <caret line="118" column="60" lean-forward="false" selection-start-line="118" selection-start-column="60" selection-end-line="118" selection-end-column="60" />
                     <folding />
                   </state>
                 </provider>
@@ -107,7 +107,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoubleHT.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DoubleHT.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DoubleHT.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1649">
@@ -122,6 +122,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
               <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2433">
+              <caret line="203" column="4" lean-forward="false" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -144,13 +154,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/ChainHT.hpp" />
         <option value="$PROJECT_DIR$/ChainHT.cpp" />
         <option value="$PROJECT_DIR$/LineHT.hpp" />
         <option value="$PROJECT_DIR$/DoubleHT.hpp" />
-        <option value="$PROJECT_DIR$/LineHT.cpp" />
         <option value="$PROJECT_DIR$/DoubleHT.cpp" />
+        <option value="$PROJECT_DIR$/LineHT.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -235,12 +245,12 @@
       <option name="presentableId" value="Default" />
       <updated>1513729988676</updated>
       <workItem from="1513729989835" duration="2608000" />
-      <workItem from="1513809242562" duration="2981000" />
+      <workItem from="1513809242562" duration="4293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5589000" />
+    <option name="totallyTimeSpent" value="6901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1734" height="1447" extended-state="0" />
@@ -340,9 +350,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
           <caret line="100" column="30" lean-forward="false" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -362,16 +370,6 @@
         <state relative-caret-position="0">
           <caret line="5" column="63" lean-forward="false" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="100" column="30" lean-forward="false" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -422,6 +420,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DoubleHT.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="148" column="44" lean-forward="false" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/LineHT.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -430,10 +436,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubleHT.cpp">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="148" column="44" lean-forward="false" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
+        <state relative-caret-position="2433">
+          <caret line="203" column="4" lean-forward="false" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
           <folding />
         </state>
       </provider>

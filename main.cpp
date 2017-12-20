@@ -7,16 +7,26 @@
 #include "ChainHT.hpp"
 
 
-int FindValue(const std::string &str) {
-
+int FindKey(const std::string &str) {
     std::istringstream iss(str);
     std::string tmp;
     iss >> tmp;
     tmp.clear();
     iss >> tmp;
+    int key = atoi(tmp.c_str());
+    return key;
+}
+
+int FindValue(const std::string &str) {
+    std::istringstream iss(str);
+    std::string tmp;
+    iss >> tmp;
+    tmp.clear();
+    iss >> tmp;
+    tmp.clear();
+    iss >> tmp;
     int value = atoi(tmp.c_str());
     return value;
-
 }
 
 bool FileIsEqual(const std::string &firstFileName, const std::string &secondFileName) {
@@ -55,7 +65,7 @@ int main(int argc, char *argv[]) {
 
         if (line.find("delete") == 0) {
 
-            if (!DoubleH.remove(FindValue(line))) {
+            if (!DoubleH.remove(FindKey(line))) {
 
                 fileOut << "error1" << std::endl;
 
@@ -73,19 +83,22 @@ int main(int argc, char *argv[]) {
 
         if (line.find("add") == 0) {
 
-            DoubleH.add(FindValue(line));
+            std::pair<int,int> pair;
+            pair.first=FindKey(line);
+            pair.second=FindValue(line);
+            DoubleH.add(pair);
 
         }
 
         if (line.find("has") == 0) {
 
-            if (!DoubleH.has(FindValue(line))) {
+            if (!DoubleH.has(FindKey(line))) {
 
                 fileOut << FindValue(line) << " hasn't found" << std::endl;
 
             } else {
 
-                fileOut << FindValue(line) << " has found" << std::endl;
+                fileOut << FindKey(line) << " has found" << std::endl;
 
             }
         }
@@ -107,11 +120,14 @@ int main(int argc, char *argv[]) {
 
 
         stop = std::chrono::high_resolution_clock::now();
+
         std::cout << "Double_HT runtime = "
                   << std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count() << std::endl;
 
-        fileIn.close();
-        fileIn.open("/Users/Vipolion/Documents/ALG/HashMaps/in.txt");
+    fileIn.clear();
+    fileIn.seekg(0);
+    fileOut.clear();
+    fileOut.seekp(0);
 
         fileOut << std::endl << "//////////////////----Line_Hash_Table-----//////////////////" << std::endl<< std::endl;
 
@@ -121,7 +137,7 @@ int main(int argc, char *argv[]) {
 
             if (line.find("delete") == 0) {
 
-                if (!LineH.remove(FindValue(line))) {
+                if (!LineH.remove(FindKey(line))) {
 
                     fileOut << "error1" << std::endl;
 
@@ -139,19 +155,22 @@ int main(int argc, char *argv[]) {
 
             if (line.find("add") == 0) {
 
-                LineH.add(FindValue(line));
+                std::pair<int,int> pair;
+                pair.first=FindKey(line);
+                pair.second=FindValue(line);
+                LineH.add(pair);
 
             }
 
             if (line.find("has") == 0) {
 
-                if (!LineH.has(FindValue(line))) {
+                if (!LineH.has(FindKey(line))) {
 
-                    fileOut << FindValue(line) << " hasn't found" << std::endl;
+                    fileOut << FindKey(line) << " hasn't found" << std::endl;
 
                 } else {
 
-                    fileOut << FindValue(line) << " has found" << std::endl;
+                    fileOut << FindKey(line) << " has found" << std::endl;
 
                 }
             }
@@ -176,9 +195,13 @@ int main(int argc, char *argv[]) {
             std::cout << "Line_HT runtime = "
                       << std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count() << std::endl;
 
-            fileIn.close();
-            fileIn.open("/Users/Vipolion/Documents/ALG/HashMaps/in.txt");
 
+    fileIn.clear();
+    fileIn.seekg(0);
+    fileOut.clear();
+    fileOut.seekp(0);
+
+    
             fileOut << std::endl << "//////////////////----Chain_Hash_Table-----//////////////////" << std::endl<< std::endl;
 
             start = std::chrono::high_resolution_clock::now();
@@ -205,19 +228,22 @@ int main(int argc, char *argv[]) {
 
                 if (line.find("add") == 0) {
 
-                    ChainH.add(FindValue(line));
+                    std::pair<int,int> pair;
+                    pair.first=FindKey(line);
+                    pair.second=FindValue(line);
+                    ChainH.add(pair);
 
                 }
 
                 if (line.find("has") == 0) {
 
-                    if (!ChainH.has(FindValue(line))) {
+                    if (!ChainH.has(FindKey(line))) {
 
-                        fileOut << FindValue(line) << " hasn't found" << std::endl;
+                        fileOut << FindKey(line) << " hasn't found" << std::endl;
 
                     } else {
 
-                        fileOut << FindValue(line) << " has found" << std::endl;
+                        fileOut << FindKey(line) << " has found" << std::endl;
                     }
 
                 }

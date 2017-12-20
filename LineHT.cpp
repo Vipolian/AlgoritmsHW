@@ -116,7 +116,7 @@ bool l_hash_table::has( const int & key ) const {
         if (i >= data.size()) break;
     }
 
-    return data[hash].first.first == key && data[hash].second;
+    return data[hash].first.first == key && data[hash].se   cond;
 
 }
 
