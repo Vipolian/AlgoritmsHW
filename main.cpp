@@ -2,9 +2,9 @@
 #include <sstream>
 #include <fstream>
 #include <chrono>
-#include "DoubleHT.hpp"
-#include "LineHT.hpp"
-#include "ChainHT.hpp"
+#include "DoubleHT/DoubleHT.hpp"
+#include "LineHT/LineHT.hpp"
+#include "ChainTH/ChainHT.hpp"
 
 
 int FindKey(const std::string &str) {

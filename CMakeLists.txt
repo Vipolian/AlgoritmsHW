@@ -3,4 +3,4 @@ project(HashMap)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(HashMap main.cpp ChainHT.hpp LineHT.hpp DoubleHT.hpp ChainHT.cpp DoubleHT.cpp LineHT.cpp)
+add_executable(HashMap main.cpp ChainTH/ChainHT.hpp LineHT/LineHT.hpp DoubleHT/DoubleHT.hpp ChainTH/ChainHT.cpp DoubleHT/DoubleHT.cpp LineHT/LineHT.cpp)
