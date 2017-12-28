@@ -107,7 +107,9 @@ void c_hash_table::print(std::ostream &outputstream) {
     for( int i = 0; i < static_cast<int>( table.size() ); ++i ) {
 
         CHashTableNode* current = table[i];
+
         while( current != nullptr ) {
+
             CHashTableNode* next = current->Next;
             outputstream << current->data.second << " ";
             current = next;

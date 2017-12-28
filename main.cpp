@@ -42,12 +42,12 @@ bool FileIsEqual(const std::string &firstFileName, const std::string &secondFile
 }
 
 
-int main(int argc, char *argv[]) {
+int main() {
 
     std::string line;
-    std::ifstream fileIn(argv[1]);
+    std::ifstream fileIn("/Users/Vipolion/Documents/AlgoritmsHW/in.txt");
     assert(fileIn);
-    std::ofstream fileOut(argv[2]);
+    std::ofstream fileOut("/Users/Vipolion/Documents/AlgoritmsHW/out.txt");
     assert(fileOut);
 
 
@@ -125,8 +125,8 @@ int main(int argc, char *argv[]) {
 
     fileIn.clear();
     fileIn.seekg(0);
-    fileOut.clear();
-    fileOut.seekp(0);
+//    fileOut.clear();
+//    fileOut.seekp(0);
 
         fileOut << std::endl << "//////////////////----Line_Hash_Table-----//////////////////" << std::endl<< std::endl;
 
@@ -197,8 +197,8 @@ int main(int argc, char *argv[]) {
 
     fileIn.clear();
     fileIn.seekg(0);
-    fileOut.clear();
-    fileOut.seekp(0);
+//    fileOut.clear();
+//    fileOut.seekp(0);
 
 
             fileOut << std::endl << "//////////////////----Chain_Hash_Table-----//////////////////" << std::endl<< std::endl;
@@ -269,14 +269,14 @@ int main(int argc, char *argv[]) {
             fileIn.close();
             
 
-            if (FileIsEqual(argv[2], argv[3])) {
-                
+            if (FileIsEqual("/Users/Vipolion/Documents/AlgoritmsHW/out.txt", "/Users/Vipolion/Documents/AlgoritmsHW/true.txt")) {
+
                  std::cout << "Correct" << std::endl;
-                
+
                 }
-        
+
                  else {
-                
+
                     std::cout << "Not correct" << std::endl;
                 }
 
