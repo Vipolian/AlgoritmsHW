@@ -2,11 +2,10 @@
 // Created by Vipolion on 09.12.2017.
 //
 
-#ifndef HASHMAP_CHAINHM_H
-#define HASHMAP_CHAINHM_H
 
 #include <assert.h>
 #include <iostream>
+#include <utility>
 #include <vector>
 
 
@@ -28,11 +27,9 @@ private:
     struct CHashTableNode {
         std::pair<int,int> data;
         CHashTableNode* Next;
-        explicit CHashTableNode( std::pair<int,int> pair ) : data(pair), Next( nullptr ) {}
+        explicit CHashTableNode( std::pair<int,int> pair ) : data(std::move(pair)), Next( nullptr ) {}
     };
 
-    int min=0;
-    int max=0;
     std::vector<CHashTableNode*> table;
 };
 

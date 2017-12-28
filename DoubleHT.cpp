@@ -154,11 +154,32 @@ void d_hash_table::print(std::ostream &outputstream) {
 
 int d_hash_table::Min() {
 
-    return min;
+    int min = 2147483647;
+
+    for (int i = 0; i < data.size(); i++ ) {
+
+        if (!data[i].second) {
+
+            if (data[i].first.first < min) { min = data[i].first.first }
+
+        }
+
+        return min;
+    }
 }
 
 int d_hash_table::Max() {
 
-    return max;
+    int max = 0;
 
+    for (int i = 0; i < data.size(); i++ ) {
+
+        if (!data[i].second) {
+
+            if (data[i].first.first > max) { max = data[i].first.first }
+
+        }
+
+        return max;
+    }
 }

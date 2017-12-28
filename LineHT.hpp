@@ -13,7 +13,7 @@
 #include <cmath>
 
 
-using vector_t = std::vector<std::pair<std::pair<int,int>,bool>>;
+using vector_t = std::vector<std::pair<std::pair<int,int>,bool> >;
 
 
 class l_hash_table {
@@ -27,13 +27,12 @@ public:
     bool remove( const int & key );
     void print( std::ostream& );
     void resize();
-    int Max();
     int Min();
+    int Max();
+
 
 private:
 
-    int max=0;
-    int min=0;
     vector_t data;
     unsigned int current_size;
 

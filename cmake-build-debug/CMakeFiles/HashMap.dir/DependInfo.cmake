@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Vipolion/Documents/GitHub/AlgoritmsHW/ChainHT.cpp" "C:/Users/Vipolion/Documents/GitHub/AlgoritmsHW/cmake-build-debug/CMakeFiles/HashMap.dir/ChainHT.cpp.obj"
-  "C:/Users/Vipolion/Documents/GitHub/AlgoritmsHW/DoubleHT.cpp" "C:/Users/Vipolion/Documents/GitHub/AlgoritmsHW/cmake-build-debug/CMakeFiles/HashMap.dir/DoubleHT.cpp.obj"
-  "C:/Users/Vipolion/Documents/GitHub/AlgoritmsHW/LineHT.cpp" "C:/Users/Vipolion/Documents/GitHub/AlgoritmsHW/cmake-build-debug/CMakeFiles/HashMap.dir/LineHT.cpp.obj"
-  "C:/Users/Vipolion/Documents/GitHub/AlgoritmsHW/main.cpp" "C:/Users/Vipolion/Documents/GitHub/AlgoritmsHW/cmake-build-debug/CMakeFiles/HashMap.dir/main.cpp.obj"
+  "/Users/Vipolion/Documents/AlgoritmsHW/ChainHT.cpp" "/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles/HashMap.dir/ChainHT.cpp.o"
+  "/Users/Vipolion/Documents/AlgoritmsHW/DoubleHT.cpp" "/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles/HashMap.dir/DoubleHT.cpp.o"
+  "/Users/Vipolion/Documents/AlgoritmsHW/LineHT.cpp" "/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles/HashMap.dir/LineHT.cpp.o"
+  "/Users/Vipolion/Documents/AlgoritmsHW/main.cpp" "/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles/HashMap.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

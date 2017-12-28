@@ -57,8 +57,6 @@ bool c_hash_table::add( std::pair<int,int> pair ) {
         }
     }
 
-    if (max < pair.first) { max = pair.first; }
-    if (min> pair.first) { min = pair.first; }
 
     CHashTableNode* newNode = new CHashTableNode( pair );
     newNode->Next = table[hash];
@@ -121,10 +119,45 @@ void c_hash_table::print(std::ostream &outputstream) {
 
 int c_hash_table::Min() {
 
+    int min = 2147483647;
+
+    for( int i = 0 ; i <  table.size() ; ++i ) {
+
+        CHashTableNode* current = table[i];
+
+        while( current != nullptr ) {
+
+            CHashTableNode* next = current->Next;
+
+            if (current->data.first < min) { min = current->data.first; }
+
+            current = next;
+
+        }
+    }
+
     return min;
 }
 
+
 int c_hash_table::Max() {
+
+    int max = 0;
+
+    for( int i = 0 ; i <  table.size() ; ++i ) {
+
+        CHashTableNode* current = table[i];
+
+        while( current != nullptr ) {
+
+            CHashTableNode* next = current->Next;
+
+            if (current->data.first > max) { max = current->data.first; }
+
+            current = next;
+
+        }
+    }
 
     return max;
 

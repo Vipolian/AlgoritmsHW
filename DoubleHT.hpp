@@ -13,7 +13,7 @@
 #include <cmath>
 
 
-using vector_t = std::vector<std::pair<std::pair<int,int>,bool>>;
+using vector_t = std::vector<std::pair<std::pair<int,int>,bool> >;
 
 
 class d_hash_table {
@@ -31,9 +31,7 @@ public:
     int Min();
     
 private:
-    
-    int max=0;
-    int min=0;
+
     vector_t data;
     unsigned int current_size;
     

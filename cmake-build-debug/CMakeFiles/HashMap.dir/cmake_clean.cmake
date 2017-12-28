@@ -1,12 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/HashMap.dir/main.cpp.obj"
-  "CMakeFiles/HashMap.dir/ChainHT.cpp.obj"
-  "CMakeFiles/HashMap.dir/DoubleHT.cpp.obj"
-  "CMakeFiles/HashMap.dir/LineHT.cpp.obj"
+  "CMakeFiles/HashMap.dir/main.cpp.o"
+  "CMakeFiles/HashMap.dir/ChainHT.cpp.o"
+  "CMakeFiles/HashMap.dir/DoubleHT.cpp.o"
+  "CMakeFiles/HashMap.dir/LineHT.cpp.o"
   "HashMap.pdb"
-  "HashMap.exe"
-  "HashMap.exe.manifest"
-  "libHashMap.dll.a"
+  "HashMap"
 )
 
 # Per-language clean rules from dependency scanning.
