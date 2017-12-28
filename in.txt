@@ -1,0 +1,4 @@
+add 13
+add 45
+add 76
+print 

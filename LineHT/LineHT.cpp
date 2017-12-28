@@ -10,7 +10,7 @@ int my_hash_l(const int & key, int bound) {
 
 }
 
-l_hash_table::l_hash_table(int max_size) : data( max_size, std::pair<std::pair<int,int>,bool> ((0,0),false) ), current_size(0) {}
+l_hash_table::l_hash_table(int max_size) : data( max_size, std::pair<std::pair<int,int>,bool> (std::pair<int,int>(0,0),false) ), current_size(0) {}
 
 
 l_hash_table::~l_hash_table() = default;
@@ -142,12 +142,14 @@ int l_hash_table::Min() {
 
         if (!data[i].second) {
 
-            if (data[i].first.first < min) { min = data[i].first.first }
+            if (data[i].first.first < min) { min = data[i].first.first; }
 
         }
 
-        return min;
     }
+
+    return min;
+
 }
 
 int l_hash_table::Max() {
@@ -158,10 +160,12 @@ int l_hash_table::Max() {
 
         if (!data[i].second) {
 
-            if (data[i].first.first > max) { max = data[i].first.first }
+            if (data[i].first.first > max) { max = data[i].first.first; }
 
         }
 
-        return max;
+
     }
+
+    return max;
 }

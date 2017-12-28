@@ -19,7 +19,7 @@ int my_second_hash(const int & key, int bound) {
     return hash_d;
 }
 
-d_hash_table::d_hash_table(int max_size) : data( max_size, std::pair<std::pair<int,int>,bool> ((0,0),false) ), current_size(0) {}
+d_hash_table::d_hash_table(int max_size) : data( max_size, std::pair<std::pair<int,int>,bool> (std::pair<int,int>(0,0),false) ), current_size(0) {}
 
 
 d_hash_table::~d_hash_table() {}
@@ -38,7 +38,7 @@ void d_hash_table::resize() {
 
 bool d_hash_table::add( std::pair<int,int> pair ) {
 
-    if (this->has(pair.key)){
+    if (this->has(pair.first)){
         return false;
     }
 
@@ -50,8 +50,6 @@ bool d_hash_table::add( std::pair<int,int> pair ) {
 
     const int hash = my_hash_d(pair.first, data.size());
 
-    if (max < pair.first) { max = pair.first; }
-    if (min> pair.first) { min = pair.first; }
 
 
     if (!data[hash].second) {
@@ -160,12 +158,12 @@ int d_hash_table::Min() {
 
         if (!data[i].second) {
 
-            if (data[i].first.first < min) { min = data[i].first.first }
+            if (data[i].first.first < min) { min = data[i].first.first; }
 
         }
 
-        return min;
     }
+    return min;
 }
 
 int d_hash_table::Max() {
@@ -176,10 +174,11 @@ int d_hash_table::Max() {
 
         if (!data[i].second) {
 
-            if (data[i].first.first > max) { max = data[i].first.first }
+            if (data[i].first.first > max) { max = data[i].first.first; }
 
         }
-
-        return max;
     }
+
+    return max;
+
 }

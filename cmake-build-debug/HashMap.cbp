@@ -80,22 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/ChainHT.cpp">
+		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/ChainTH/ChainHT.cpp">
 			<Option target="HashMap"/>
 		</Unit>
-		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/ChainHT.hpp">
+		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/ChainTH/ChainHT.hpp">
 			<Option target="HashMap"/>
 		</Unit>
-		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/DoubleHT.cpp">
+		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/DoubleHT/DoubleHT.cpp">
 			<Option target="HashMap"/>
 		</Unit>
-		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/DoubleHT.hpp">
+		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/DoubleHT/DoubleHT.hpp">
 			<Option target="HashMap"/>
 		</Unit>
-		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/LineHT.cpp">
+		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/LineHT/LineHT.cpp">
 			<Option target="HashMap"/>
 		</Unit>
-		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/LineHT.hpp">
+		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/LineHT/LineHT.hpp">
 			<Option target="HashMap"/>
 		</Unit>
 		<Unit filename="/Users/Vipolion/Documents/AlgoritmsHW/main.cpp">

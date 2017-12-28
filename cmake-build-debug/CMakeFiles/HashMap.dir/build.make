@@ -81,92 +81,92 @@ CMakeFiles/HashMap.dir/main.cpp.o.provides: CMakeFiles/HashMap.dir/main.cpp.o.re
 CMakeFiles/HashMap.dir/main.cpp.o.provides.build: CMakeFiles/HashMap.dir/main.cpp.o
 
 
-CMakeFiles/HashMap.dir/ChainHT.cpp.o: CMakeFiles/HashMap.dir/flags.make
-CMakeFiles/HashMap.dir/ChainHT.cpp.o: ../ChainHT.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HashMap.dir/ChainHT.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashMap.dir/ChainHT.cpp.o -c /Users/Vipolion/Documents/AlgoritmsHW/ChainHT.cpp
+CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o: CMakeFiles/HashMap.dir/flags.make
+CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o: ../ChainTH/ChainHT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o -c /Users/Vipolion/Documents/AlgoritmsHW/ChainTH/ChainHT.cpp
 
-CMakeFiles/HashMap.dir/ChainHT.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HashMap.dir/ChainHT.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Vipolion/Documents/AlgoritmsHW/ChainHT.cpp > CMakeFiles/HashMap.dir/ChainHT.cpp.i
+CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Vipolion/Documents/AlgoritmsHW/ChainTH/ChainHT.cpp > CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.i
 
-CMakeFiles/HashMap.dir/ChainHT.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HashMap.dir/ChainHT.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Vipolion/Documents/AlgoritmsHW/ChainHT.cpp -o CMakeFiles/HashMap.dir/ChainHT.cpp.s
+CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Vipolion/Documents/AlgoritmsHW/ChainTH/ChainHT.cpp -o CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.s
 
-CMakeFiles/HashMap.dir/ChainHT.cpp.o.requires:
+CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o.requires:
 
-.PHONY : CMakeFiles/HashMap.dir/ChainHT.cpp.o.requires
+.PHONY : CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o.requires
 
-CMakeFiles/HashMap.dir/ChainHT.cpp.o.provides: CMakeFiles/HashMap.dir/ChainHT.cpp.o.requires
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/ChainHT.cpp.o.provides.build
-.PHONY : CMakeFiles/HashMap.dir/ChainHT.cpp.o.provides
+CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o.provides: CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o.requires
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o.provides.build
+.PHONY : CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o.provides
 
-CMakeFiles/HashMap.dir/ChainHT.cpp.o.provides.build: CMakeFiles/HashMap.dir/ChainHT.cpp.o
-
-
-CMakeFiles/HashMap.dir/DoubleHT.cpp.o: CMakeFiles/HashMap.dir/flags.make
-CMakeFiles/HashMap.dir/DoubleHT.cpp.o: ../DoubleHT.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HashMap.dir/DoubleHT.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashMap.dir/DoubleHT.cpp.o -c /Users/Vipolion/Documents/AlgoritmsHW/DoubleHT.cpp
-
-CMakeFiles/HashMap.dir/DoubleHT.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HashMap.dir/DoubleHT.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Vipolion/Documents/AlgoritmsHW/DoubleHT.cpp > CMakeFiles/HashMap.dir/DoubleHT.cpp.i
-
-CMakeFiles/HashMap.dir/DoubleHT.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HashMap.dir/DoubleHT.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Vipolion/Documents/AlgoritmsHW/DoubleHT.cpp -o CMakeFiles/HashMap.dir/DoubleHT.cpp.s
-
-CMakeFiles/HashMap.dir/DoubleHT.cpp.o.requires:
-
-.PHONY : CMakeFiles/HashMap.dir/DoubleHT.cpp.o.requires
-
-CMakeFiles/HashMap.dir/DoubleHT.cpp.o.provides: CMakeFiles/HashMap.dir/DoubleHT.cpp.o.requires
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/DoubleHT.cpp.o.provides.build
-.PHONY : CMakeFiles/HashMap.dir/DoubleHT.cpp.o.provides
-
-CMakeFiles/HashMap.dir/DoubleHT.cpp.o.provides.build: CMakeFiles/HashMap.dir/DoubleHT.cpp.o
+CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o.provides.build: CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o
 
 
-CMakeFiles/HashMap.dir/LineHT.cpp.o: CMakeFiles/HashMap.dir/flags.make
-CMakeFiles/HashMap.dir/LineHT.cpp.o: ../LineHT.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HashMap.dir/LineHT.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashMap.dir/LineHT.cpp.o -c /Users/Vipolion/Documents/AlgoritmsHW/LineHT.cpp
+CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o: CMakeFiles/HashMap.dir/flags.make
+CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o: ../DoubleHT/DoubleHT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o -c /Users/Vipolion/Documents/AlgoritmsHW/DoubleHT/DoubleHT.cpp
 
-CMakeFiles/HashMap.dir/LineHT.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HashMap.dir/LineHT.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Vipolion/Documents/AlgoritmsHW/LineHT.cpp > CMakeFiles/HashMap.dir/LineHT.cpp.i
+CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Vipolion/Documents/AlgoritmsHW/DoubleHT/DoubleHT.cpp > CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.i
 
-CMakeFiles/HashMap.dir/LineHT.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HashMap.dir/LineHT.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Vipolion/Documents/AlgoritmsHW/LineHT.cpp -o CMakeFiles/HashMap.dir/LineHT.cpp.s
+CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Vipolion/Documents/AlgoritmsHW/DoubleHT/DoubleHT.cpp -o CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.s
 
-CMakeFiles/HashMap.dir/LineHT.cpp.o.requires:
+CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o.requires:
 
-.PHONY : CMakeFiles/HashMap.dir/LineHT.cpp.o.requires
+.PHONY : CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o.requires
 
-CMakeFiles/HashMap.dir/LineHT.cpp.o.provides: CMakeFiles/HashMap.dir/LineHT.cpp.o.requires
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/LineHT.cpp.o.provides.build
-.PHONY : CMakeFiles/HashMap.dir/LineHT.cpp.o.provides
+CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o.provides: CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o.requires
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o.provides.build
+.PHONY : CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o.provides
 
-CMakeFiles/HashMap.dir/LineHT.cpp.o.provides.build: CMakeFiles/HashMap.dir/LineHT.cpp.o
+CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o.provides.build: CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o
+
+
+CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o: CMakeFiles/HashMap.dir/flags.make
+CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o: ../LineHT/LineHT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o -c /Users/Vipolion/Documents/AlgoritmsHW/LineHT/LineHT.cpp
+
+CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Vipolion/Documents/AlgoritmsHW/LineHT/LineHT.cpp > CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.i
+
+CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Vipolion/Documents/AlgoritmsHW/LineHT/LineHT.cpp -o CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.s
+
+CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o.requires:
+
+.PHONY : CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o.requires
+
+CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o.provides: CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o.requires
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o.provides.build
+.PHONY : CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o.provides
+
+CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o.provides.build: CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o
 
 
 # Object files for target HashMap
 HashMap_OBJECTS = \
 "CMakeFiles/HashMap.dir/main.cpp.o" \
-"CMakeFiles/HashMap.dir/ChainHT.cpp.o" \
-"CMakeFiles/HashMap.dir/DoubleHT.cpp.o" \
-"CMakeFiles/HashMap.dir/LineHT.cpp.o"
+"CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o" \
+"CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o" \
+"CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o"
 
 # External object files for target HashMap
 HashMap_EXTERNAL_OBJECTS =
 
 HashMap: CMakeFiles/HashMap.dir/main.cpp.o
-HashMap: CMakeFiles/HashMap.dir/ChainHT.cpp.o
-HashMap: CMakeFiles/HashMap.dir/DoubleHT.cpp.o
-HashMap: CMakeFiles/HashMap.dir/LineHT.cpp.o
+HashMap: CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o
+HashMap: CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o
+HashMap: CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o
 HashMap: CMakeFiles/HashMap.dir/build.make
 HashMap: CMakeFiles/HashMap.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Vipolion/Documents/AlgoritmsHW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable HashMap"
@@ -178,9 +178,9 @@ CMakeFiles/HashMap.dir/build: HashMap
 .PHONY : CMakeFiles/HashMap.dir/build
 
 CMakeFiles/HashMap.dir/requires: CMakeFiles/HashMap.dir/main.cpp.o.requires
-CMakeFiles/HashMap.dir/requires: CMakeFiles/HashMap.dir/ChainHT.cpp.o.requires
-CMakeFiles/HashMap.dir/requires: CMakeFiles/HashMap.dir/DoubleHT.cpp.o.requires
-CMakeFiles/HashMap.dir/requires: CMakeFiles/HashMap.dir/LineHT.cpp.o.requires
+CMakeFiles/HashMap.dir/requires: CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o.requires
+CMakeFiles/HashMap.dir/requires: CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o.requires
+CMakeFiles/HashMap.dir/requires: CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o.requires
 
 .PHONY : CMakeFiles/HashMap.dir/requires
 

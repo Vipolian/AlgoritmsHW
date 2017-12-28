@@ -123,86 +123,86 @@ HashMap/fast:
 	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/build
 .PHONY : HashMap/fast
 
-ChainHT.o: ChainHT.cpp.o
+ChainTH/ChainHT.o: ChainTH/ChainHT.cpp.o
 
-.PHONY : ChainHT.o
-
-# target to build an object file
-ChainHT.cpp.o:
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/ChainHT.cpp.o
-.PHONY : ChainHT.cpp.o
-
-ChainHT.i: ChainHT.cpp.i
-
-.PHONY : ChainHT.i
-
-# target to preprocess a source file
-ChainHT.cpp.i:
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/ChainHT.cpp.i
-.PHONY : ChainHT.cpp.i
-
-ChainHT.s: ChainHT.cpp.s
-
-.PHONY : ChainHT.s
-
-# target to generate assembly for a file
-ChainHT.cpp.s:
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/ChainHT.cpp.s
-.PHONY : ChainHT.cpp.s
-
-DoubleHT.o: DoubleHT.cpp.o
-
-.PHONY : DoubleHT.o
+.PHONY : ChainTH/ChainHT.o
 
 # target to build an object file
-DoubleHT.cpp.o:
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/DoubleHT.cpp.o
-.PHONY : DoubleHT.cpp.o
+ChainTH/ChainHT.cpp.o:
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o
+.PHONY : ChainTH/ChainHT.cpp.o
 
-DoubleHT.i: DoubleHT.cpp.i
+ChainTH/ChainHT.i: ChainTH/ChainHT.cpp.i
 
-.PHONY : DoubleHT.i
+.PHONY : ChainTH/ChainHT.i
 
 # target to preprocess a source file
-DoubleHT.cpp.i:
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/DoubleHT.cpp.i
-.PHONY : DoubleHT.cpp.i
+ChainTH/ChainHT.cpp.i:
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.i
+.PHONY : ChainTH/ChainHT.cpp.i
 
-DoubleHT.s: DoubleHT.cpp.s
+ChainTH/ChainHT.s: ChainTH/ChainHT.cpp.s
 
-.PHONY : DoubleHT.s
+.PHONY : ChainTH/ChainHT.s
 
 # target to generate assembly for a file
-DoubleHT.cpp.s:
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/DoubleHT.cpp.s
-.PHONY : DoubleHT.cpp.s
+ChainTH/ChainHT.cpp.s:
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.s
+.PHONY : ChainTH/ChainHT.cpp.s
 
-LineHT.o: LineHT.cpp.o
+DoubleHT/DoubleHT.o: DoubleHT/DoubleHT.cpp.o
 
-.PHONY : LineHT.o
+.PHONY : DoubleHT/DoubleHT.o
 
 # target to build an object file
-LineHT.cpp.o:
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/LineHT.cpp.o
-.PHONY : LineHT.cpp.o
+DoubleHT/DoubleHT.cpp.o:
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o
+.PHONY : DoubleHT/DoubleHT.cpp.o
 
-LineHT.i: LineHT.cpp.i
+DoubleHT/DoubleHT.i: DoubleHT/DoubleHT.cpp.i
 
-.PHONY : LineHT.i
+.PHONY : DoubleHT/DoubleHT.i
 
 # target to preprocess a source file
-LineHT.cpp.i:
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/LineHT.cpp.i
-.PHONY : LineHT.cpp.i
+DoubleHT/DoubleHT.cpp.i:
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.i
+.PHONY : DoubleHT/DoubleHT.cpp.i
 
-LineHT.s: LineHT.cpp.s
+DoubleHT/DoubleHT.s: DoubleHT/DoubleHT.cpp.s
 
-.PHONY : LineHT.s
+.PHONY : DoubleHT/DoubleHT.s
 
 # target to generate assembly for a file
-LineHT.cpp.s:
-	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/LineHT.cpp.s
-.PHONY : LineHT.cpp.s
+DoubleHT/DoubleHT.cpp.s:
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.s
+.PHONY : DoubleHT/DoubleHT.cpp.s
+
+LineHT/LineHT.o: LineHT/LineHT.cpp.o
+
+.PHONY : LineHT/LineHT.o
+
+# target to build an object file
+LineHT/LineHT.cpp.o:
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o
+.PHONY : LineHT/LineHT.cpp.o
+
+LineHT/LineHT.i: LineHT/LineHT.cpp.i
+
+.PHONY : LineHT/LineHT.i
+
+# target to preprocess a source file
+LineHT/LineHT.cpp.i:
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.i
+.PHONY : LineHT/LineHT.cpp.i
+
+LineHT/LineHT.s: LineHT/LineHT.cpp.s
+
+.PHONY : LineHT/LineHT.s
+
+# target to generate assembly for a file
+LineHT/LineHT.cpp.s:
+	$(MAKE) -f CMakeFiles/HashMap.dir/build.make CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.s
+.PHONY : LineHT/LineHT.cpp.s
 
 main.o: main.cpp.o
 
@@ -240,15 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... HashMap"
-	@echo "... ChainHT.o"
-	@echo "... ChainHT.i"
-	@echo "... ChainHT.s"
-	@echo "... DoubleHT.o"
-	@echo "... DoubleHT.i"
-	@echo "... DoubleHT.s"
-	@echo "... LineHT.o"
-	@echo "... LineHT.i"
-	@echo "... LineHT.s"
+	@echo "... ChainTH/ChainHT.o"
+	@echo "... ChainTH/ChainHT.i"
+	@echo "... ChainTH/ChainHT.s"
+	@echo "... DoubleHT/DoubleHT.o"
+	@echo "... DoubleHT/DoubleHT.i"
+	@echo "... DoubleHT/DoubleHT.s"
+	@echo "... LineHT/LineHT.o"
+	@echo "... LineHT/LineHT.i"
+	@echo "... LineHT/LineHT.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

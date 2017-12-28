@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/HashMap.dir/main.cpp.o"
-  "CMakeFiles/HashMap.dir/ChainHT.cpp.o"
-  "CMakeFiles/HashMap.dir/DoubleHT.cpp.o"
-  "CMakeFiles/HashMap.dir/LineHT.cpp.o"
+  "CMakeFiles/HashMap.dir/ChainTH/ChainHT.cpp.o"
+  "CMakeFiles/HashMap.dir/DoubleHT/DoubleHT.cpp.o"
+  "CMakeFiles/HashMap.dir/LineHT/LineHT.cpp.o"
   "HashMap.pdb"
   "HashMap"
 )
