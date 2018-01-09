@@ -12,11 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b80fb2c9-3987-48f4-b679-68992f3d4b44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ChainTH/ChainHT.cpp" afterPath="$PROJECT_DIR$/ChainTH/ChainHT.cpp" />
-      <change beforePath="$PROJECT_DIR$/ChainTH/ChainHT.hpp" afterPath="$PROJECT_DIR$/ChainTH/ChainHT.hpp" />
-      <change beforePath="$PROJECT_DIR$/DoubleHT/DoubleHT.cpp" afterPath="$PROJECT_DIR$/DoubleHT/DoubleHT.cpp" />
-      <change beforePath="$PROJECT_DIR$/LineHT/LineHT.cpp" afterPath="$PROJECT_DIR$/LineHT/LineHT.cpp" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,26 +25,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LineHT.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LineHT/LineHT.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1584">
-              <caret line="132" column="46" lean-forward="false" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LineHT.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LineHT/LineHT.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DoubleHT.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DoubleHT/DoubleHT.hpp">
           <provider selected="true" editor-type-id="text-editor">
@@ -81,11 +57,46 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2018">
+              <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="799">
+                <caret line="202" column="100" lean-forward="true" selection-start-line="202" selection-start-column="100" selection-end-line="202" selection-end-column="100" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Приложение_4.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Приложения/Приложение_4.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>key</find>
+      <find>прило</find>
+      <find>прилож</find>
+      <find>приложение_</find>
       <find>min</find>
     </findStrings>
     <replaceStrings>
@@ -110,6 +121,7 @@
         <option value="$PROJECT_DIR$/DoubleHT/DoubleHT.cpp" />
         <option value="$PROJECT_DIR$/ChainTH/ChainHT.cpp" />
         <option value="$PROJECT_DIR$/LineHT/LineHT.cpp" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -164,6 +176,11 @@
               <item name="HashMap" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="AlgoritmsHW" type="462c0819:PsiDirectoryNode" />
               <item name="LineHT" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HashMap" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="AlgoritmsHW" type="462c0819:PsiDirectoryNode" />
+              <item name="Приложения" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -227,12 +244,12 @@
       <workItem from="1514450302321" duration="52000" />
       <workItem from="1514450395399" duration="4895000" />
       <workItem from="1515181337433" duration="822000" />
-      <workItem from="1515459186877" duration="2086000" />
+      <workItem from="1515459186877" duration="3969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17726000" />
+    <option name="totallyTimeSpent" value="19609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -299,14 +316,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LineHT/LineHT.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="166" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LineHT/LineHT.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -652,27 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4245">
-          <caret line="283" column="0" lean-forward="false" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -725,9 +713,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LineHT/LineHT.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
+        <state relative-caret-position="1623">
           <caret line="132" column="46" lean-forward="false" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Приложения/Приложение_4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2018">
+          <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="799">
+            <caret line="202" column="100" lean-forward="true" selection-start-line="202" selection-start-column="100" selection-end-line="202" selection-end-column="100" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
