@@ -42,12 +42,12 @@ bool FileIsEqual(const std::string &firstFileName, const std::string &secondFile
 }
 
 
-int main() {
+-int main(int argc, char *argv[]) {
 
     std::string line;
-    std::ifstream fileIn("/Users/Vipolion/Documents/AlgoritmsHW/in.txt");
+    std::ifstream fileIn(argv[1]);
     assert(fileIn);
-    std::ofstream fileOut("/Users/Vipolion/Documents/AlgoritmsHW/out.txt");
+    std::ofstream fileOut(argv[2]);
     assert(fileOut);
 
 
@@ -269,7 +269,7 @@ int main() {
             fileIn.close();
             
 
-            if (FileIsEqual("/Users/Vipolion/Documents/AlgoritmsHW/out.txt", "/Users/Vipolion/Documents/AlgoritmsHW/true.txt")) {
+             if (FileIsEqual(argv[2], argv[3])) {
 
                  std::cout << "Correct" << std::endl;
 
