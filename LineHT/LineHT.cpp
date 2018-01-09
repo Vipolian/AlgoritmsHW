@@ -139,13 +139,14 @@ void l_hash_table::print(std::ostream &outputstream) {
 
 int l_hash_table::Min() {
 
-    int min = 2147483647;
+    int min = 0;
 
     for (auto &i : data) {
 
         if (!i.second) {
 
-            if (i.first.first < min) { min = i.first.first; }
+            if (i.first.first) { min = i.first.first; }
+            break;
 
         }
 
@@ -175,6 +176,7 @@ int l_hash_table::Max() {
         if (!i.second) {
 
             if (i.first.first) { max = i.first.first; }
+            break;
 
         }
 

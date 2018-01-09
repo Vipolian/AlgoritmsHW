@@ -2,7 +2,6 @@
 // Created by Vipolion on 20.12.2017.
 //
 
-#include <opencl-c.h>
 #include "ChainHT.hpp"
 
 int my_hash_c(const int &key, int bound)
