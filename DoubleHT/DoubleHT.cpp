@@ -10,6 +10,7 @@ int my_hash_d(const int & key, int bound) {
 
 }
 
+
 int my_second_hash(const int & key, int bound) {
 
 
@@ -150,15 +151,27 @@ void d_hash_table::print(std::ostream &outputstream) {
     }
 }
 
+
 int d_hash_table::Min() {
 
-    int min = 2147483647;
+    int min = 0;
 
-    for (int i = 0; i < data.size(); i++ ) {
+    for (auto &i : data) {
 
-        if (!data[i].second) {
+        if (!i.second) {
 
-            if (data[i].first.first < min) { min = data[i].first.first; }
+            if (i.first.first) { min = i.first.first; }
+
+        }
+
+    }
+
+
+    for (auto &i : data) {
+
+        if (!i.second) {
+
+            if (i.first.first < min) { min = i.first.first; }
 
         }
 
@@ -166,15 +179,27 @@ int d_hash_table::Min() {
     return min;
 }
 
+
 int d_hash_table::Max() {
 
     int max = 0;
 
-    for (int i = 0; i < data.size(); i++ ) {
+    for (auto &i : data) {
 
-        if (!data[i].second) {
+        if (!i.second) {
 
-            if (data[i].first.first > max) { max = data[i].first.first; }
+            if (i.first.first) { max = i.first.first; }
+            break;
+
+        }
+    }
+
+
+    for (auto &i : data) {
+
+        if (!i.second) {
+
+            if (i.first.first > max) { max = i.first.first; }
 
         }
     }

@@ -107,6 +107,7 @@ bool l_hash_table::remove( const int & key ) {
 
 }
 
+
 bool l_hash_table::has( const int & key ) const {
 
     int hash = my_hash_l(key, data.size());
@@ -122,27 +123,39 @@ bool l_hash_table::has( const int & key ) const {
 
 }
 
+
 void l_hash_table::print(std::ostream &outputstream) {
 
     for (const auto &obj : data) {
 
         if (obj.second) {
 
-            outputstream << obj.first.second<<" ";
+            outputstream << obj.first.first<< "->" << obj.first.second<<" ";
 
         }
     }
 }
 
+
 int l_hash_table::Min() {
 
     int min = 2147483647;
 
-    for (int i = 0; i < data.size(); i++ ) {
+    for (auto &i : data) {
 
-        if (!data[i].second) {
+        if (!i.second) {
 
-            if (data[i].first.first < min) { min = data[i].first.first; }
+            if (i.first.first < min) { min = i.first.first; }
+
+        }
+
+    }
+
+    for (auto &i : data) {
+
+        if (!i.second) {
+
+            if (i.first.first < min) { min = i.first.first; }
 
         }
 
@@ -152,18 +165,28 @@ int l_hash_table::Min() {
 
 }
 
+
 int l_hash_table::Max() {
 
     int max = 0;
 
-    for (int i = 0; i < data.size(); i++ ) {
+    for (auto &i : data) {
 
-        if (!data[i].second) {
+        if (!i.second) {
 
-            if (data[i].first.first > max) { max = data[i].first.first; }
+            if (i.first.first) { max = i.first.first; }
 
         }
 
+    }
+
+    for (auto &i : data) {
+
+        if (!i.second) {
+
+            if (i.first.first > max) { max = i.first.first; }
+
+        }
 
     }
 

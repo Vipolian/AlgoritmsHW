@@ -2,6 +2,7 @@
 // Created by Vipolion on 20.12.2017.
 //
 
+#include <opencl-c.h>
 #include "ChainHT.hpp"
 
 int my_hash_c(const int &key, int bound)
@@ -14,8 +15,7 @@ c_hash_table::c_hash_table( int initialTableSize ) : table( initialTableSize, nu
 
 c_hash_table::~c_hash_table() {
 
-    for( int i = 0 ; i <  table.size() ; ++i ) {
-        CHashTableNode* current = table[i];
+    for (auto current : table) {
         while( current != nullptr ) {
             CHashTableNode* next = current->Next;
             delete current;
@@ -104,28 +104,35 @@ bool c_hash_table::remove(const int &key) {
 
 void c_hash_table::print(std::ostream &outputstream) {
 
-    for( int i = 0; i < static_cast<int>( table.size() ); ++i ) {
-
-        CHashTableNode* current = table[i];
+    for (auto current : table) {
 
         while( current != nullptr ) {
 
             CHashTableNode* next = current->Next;
-            outputstream << current->data.second << " ";
+            outputstream << current->data.first<< "->" << current->data.second << " ";
             current = next;
 
         }
+
+        outputstream << std::endl;
+
     }
 
 }
 
 int c_hash_table::Min() {
 
-    int min = 2147483647;
+    int min = 0;
 
-    for( int i = 0 ; i <  table.size() ; ++i ) {
+    for (auto &i : table) {
 
-        CHashTableNode* current = table[i];
+        if (i)  min = i->data.first;
+        break;
+
+    }
+
+
+    for (auto current : table) {
 
         while( current != nullptr ) {
 
@@ -144,11 +151,18 @@ int c_hash_table::Min() {
 
 int c_hash_table::Max() {
 
-    int max = 0;
+    int max = 0 ;
 
-    for( int i = 0 ; i <  table.size() ; ++i ) {
+    for (auto &i : table) {
 
-        CHashTableNode* current = table[i];
+        if (i)  max = i->data.first;
+        break;
+
+    }
+
+
+
+    for (auto current : table) {
 
         while( current != nullptr ) {
 
