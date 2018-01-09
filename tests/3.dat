@@ -1,53 +1,53 @@
-add 31
-add 25
-add 63
-add 44
-add 12
-add 31
-add 1
-add 976
-add 23452
-add 8675
-add 3452
-add 776
-add 443
-add 221
-add 6
-add 98
-add 421
-add 324
-add 752
-add 111
-add 977
-add 231
-add 32
-add 221
-add 434
-add 271
-add 23
-add 94
-add 5
-add 354
-add 66
-add 812
-add 911
-add 489
-add 421
-add 22
-add 8
-add 34
-add 45
-add 999
-add 2341
-add 555
-add 781
-add 123
-add 932
-add 415
-add 35
-add 77
-add 1313
-add 3
+add 31 435
+add 25 32
+add 63 234
+add 44 3523
+add 12 2343
+add 31 5634
+add 1 765
+add 976 26
+add 23452 75
+add 8675 85
+add 3452 88
+add 776 456
+add 443 453
+add 221 45
+add 6 967
+add 98 546
+add 421 33
+add 324 76
+add 752 12
+add 111 76
+add 977 45
+add 231 87
+add 32 45
+add 221 876
+add 434 98 
+add 271 56
+add 23 84
+add 94 34
+add 5 6
+add 354 23 
+add 66 99
+add 812 11
+add 911 67
+add 489 9465
+add 421 3567
+add 22 3456
+add 8 8356
+add 34 456
+add 45 132
+add 999 864
+add 2341 13 
+add 555 76
+add 781 36
+add 123 984
+add 932 134
+add 415 645
+add 35 234
+add 77 125
+add 1313 5235
+add 3 565
 delete 12
 delete 31
 delete 1
