@@ -145,7 +145,7 @@ void d_hash_table::print(std::ostream &outputstream) {
 
         if (obj.second) {
 
-            outputstream << obj.first.second<<" ";
+            outputstream << obj.first.first<< "->" << obj.first.second<<" ";
 
         }
     }
@@ -158,7 +158,7 @@ int d_hash_table::Min() {
 
     for (auto &i : data) {
 
-        if (!i.second) {
+        if (i.second) {
 
             if (i.first.first) { min = i.first.first; }
 
@@ -169,7 +169,7 @@ int d_hash_table::Min() {
 
     for (auto &i : data) {
 
-        if (!i.second) {
+        if (i.second) {
 
             if (i.first.first < min) { min = i.first.first; }
 
@@ -186,7 +186,7 @@ int d_hash_table::Max() {
 
     for (auto &i : data) {
 
-        if (!i.second) {
+        if (i.second) {
 
             if (i.first.first) { max = i.first.first; }
             break;
@@ -197,7 +197,7 @@ int d_hash_table::Max() {
 
     for (auto &i : data) {
 
-        if (!i.second) {
+        if (i.second) {
 
             if (i.first.first > max) { max = i.first.first; }
 

@@ -51,9 +51,9 @@ int main() {
     assert(fileOut);
 
 
-    d_hash_table DoubleH(11);
-    l_hash_table LineH(11);
-    c_hash_table ChainH(11);
+    d_hash_table DoubleH(111);
+    l_hash_table LineH(111);
+    c_hash_table ChainH(111);
 
     fileOut << std::endl << "//////////////////----Double_Hash_Table-----//////////////////" << std::endl<< std::endl;
 

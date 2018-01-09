@@ -143,7 +143,7 @@ int l_hash_table::Min() {
 
     for (auto &i : data) {
 
-        if (!i.second) {
+        if (i.second) {
 
             if (i.first.first) { min = i.first.first; }
             break;
@@ -154,7 +154,7 @@ int l_hash_table::Min() {
 
     for (auto &i : data) {
 
-        if (!i.second) {
+        if (i.second) {
 
             if (i.first.first < min) { min = i.first.first; }
 
@@ -173,7 +173,7 @@ int l_hash_table::Max() {
 
     for (auto &i : data) {
 
-        if (!i.second) {
+        if (i.second) {
 
             if (i.first.first) { max = i.first.first; }
             break;
@@ -184,7 +184,7 @@ int l_hash_table::Max() {
 
     for (auto &i : data) {
 
-        if (!i.second) {
+        if (i.second) {
 
             if (i.first.first > max) { max = i.first.first; }
 

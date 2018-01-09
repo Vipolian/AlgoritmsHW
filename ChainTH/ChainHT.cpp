@@ -75,7 +75,7 @@ bool c_hash_table::remove(const int &key) {
         return false;
     }
 
-    if( table[hash]->data.first == key ) {
+    if ( table[hash]->data.first == key ) {
 
         CHashTableNode* toDelete = table[hash];
         table[hash] = toDelete->Next;
